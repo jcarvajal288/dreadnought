@@ -1,37 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct3e47jw21px5"]
+[gd_scene load_steps=17 format=3 uid="uid://ct3e47jw21px5"]
 
 [ext_resource type="Texture2D" uid="uid://bibu55cnuifyx" path="res://Entities/Characters/Dreadnought/art/body_all.png" id="1_80p8h"]
+[ext_resource type="Script" uid="uid://1fcchhocklpr" path="res://Entities/Characters/Dreadnought/dreadnought.gd" id="1_gw7rp"]
 [ext_resource type="Texture2D" uid="uid://bf07ppo8pybij" path="res://Entities/Characters/Dreadnought/art/legs_all.png" id="2_vwxon"]
-
-[sub_resource type="Animation" id="Animation_80p8h"]
-resource_name = "idleDownRight"
-length = 1.60002
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LegSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BodySprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
+[ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="3_vwxon"]
+[ext_resource type="PackedScene" uid="uid://25kncp2goi8g" path="res://Entities/Characters/Components/InputDirector.tscn" id="4_ojlrc"]
 
 [sub_resource type="Animation" id="Animation_vwxon"]
 length = 0.001
@@ -47,28 +20,168 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BodySprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+
+[sub_resource type="Animation" id="Animation_80p8h"]
+resource_name = "idleDownRight"
+length = 0.20002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_ojlrc"]
+resource_name = "idleDownLeft"
+length = 0.20002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_gw7rp"]
+resource_name = "idleUpRight"
+length = 0.20002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_jed1k"]
+resource_name = "idleUpLeft"
+length = 0.20002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_gglqg"]
+resource_name = "moveDownRight"
+length = 1.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_87ykq"]
+resource_name = "moveDownLeft"
+length = 1.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_6noo1"]
+resource_name = "moveUpRight"
+length = 1.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31]
+}
+
+[sub_resource type="Animation" id="Animation_jd7od"]
+resource_name = "moveUpLeft"
+length = 1.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37, 38, 39]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ojlrc"]
 _data = {
 &"RESET": SubResource("Animation_vwxon"),
-&"idleDownRight": SubResource("Animation_80p8h")
+&"idleDownLeft": SubResource("Animation_ojlrc"),
+&"idleDownRight": SubResource("Animation_80p8h"),
+&"idleUpLeft": SubResource("Animation_jed1k"),
+&"idleUpRight": SubResource("Animation_gw7rp"),
+&"moveDownLeft": SubResource("Animation_87ykq"),
+&"moveDownRight": SubResource("Animation_gglqg"),
+&"moveUpLeft": SubResource("Animation_jd7od"),
+&"moveUpRight": SubResource("Animation_6noo1")
 }
 
-[node name="Dreadnought" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwxon"]
+radius = 12.0
+
+[node name="Dreadnought" type="CharacterBody2D"]
+script = ExtResource("1_gw7rp")
 
 [node name="BodySprite" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource("1_80p8h")
 hframes = 8
@@ -79,8 +192,15 @@ texture = ExtResource("2_vwxon")
 hframes = 8
 vframes = 8
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="LegAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_ojlrc")
 }
 autoplay = "idleDownRight"
+script = ExtResource("3_vwxon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vwxon")
+
+[node name="InputDirector" parent="." node_paths=PackedStringArray("subject") instance=ExtResource("4_ojlrc")]
+subject = NodePath("..")
