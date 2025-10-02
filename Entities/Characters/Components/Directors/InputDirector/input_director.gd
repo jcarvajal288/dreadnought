@@ -1,4 +1,4 @@
-class_name InputDirector extends Node
+class_name InputDirector extends Director
 
 var movement_vector = Vector2.ZERO
 

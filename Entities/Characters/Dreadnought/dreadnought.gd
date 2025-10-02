@@ -1,5 +1,7 @@
-class_name Dreadnought extends CharacterBody2D
-
-var speed = 25
+class_name Dreadnought extends Character
 
 @onready var leg_animation_player = $LegAnimationPlayer
+
+func _ready() -> void:
+	speed = 25
+
