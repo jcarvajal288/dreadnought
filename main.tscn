@@ -5,10 +5,11 @@
 
 [node name="Main" type="Node"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-
 [node name="Dreadnought" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(80, 56)
+
+[node name="Camera2D" type="Camera2D" parent="Dreadnought"]
+position = Vector2(-80, -56)
+anchor_mode = 0
 
 [node name="TestLevel" parent="." instance=ExtResource("2_0xm2m")]
