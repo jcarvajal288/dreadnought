@@ -356,12 +356,13 @@ _data = {
 script = ExtResource("1_gw7rp")
 
 [node name="BodySprite" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 6
 texture = ExtResource("1_80p8h")
 hframes = 8
 vframes = 8
 
 [node name="LegSprite" type="Sprite2D" parent="."]
+z_index = 5
 texture = ExtResource("2_vwxon")
 hframes = 8
 vframes = 8

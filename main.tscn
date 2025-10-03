@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://j0jt7alhetw"]
+[gd_scene load_steps=3 format=3 uid="uid://j0jt7alhetw"]
 
 [ext_resource type="PackedScene" uid="uid://ct3e47jw21px5" path="res://Entities/Characters/Dreadnought/dreadnought.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cwmbhr8cgn78e" path="res://Levels/SpaceDerelict/TestLevel.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node"]
 
@@ -9,3 +10,5 @@ anchor_mode = 0
 
 [node name="Dreadnought" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(80, 56)
+
+[node name="TestLevel" parent="." instance=ExtResource("2_0xm2m")]
