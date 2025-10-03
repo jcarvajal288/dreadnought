@@ -1,15 +1,26 @@
 class_name State extends Node
 
+enum AnimationType {
+	REGULAR,
+	FACING,
+}
+
 @export var animation_name: String
+@export var animation_type: AnimationType
+var animation_player: AnimationPlayer
 
 var director: Director
 var subject: Character
+var signal_state_change
 
 
 func enter() -> void:
-	subject.animation_player.play("RESET")
-	subject.animation_player.advance(0)
-	subject.animation_player.play(animation_name)
+	animation_player.play("RESET")
+	animation_player.advance(0)
+	if animation_type == AnimationType.FACING:
+		animation_player.play_with_facing(animation_name)
+	else:
+		animation_player.play(animation_name)
 
 
 func exit() -> void:

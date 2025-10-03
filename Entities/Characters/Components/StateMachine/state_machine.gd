@@ -1,6 +1,7 @@
 class_name StateMachine extends Node
 
 @export var director: Director
+@export var animation_player: AnimationPlayer
 @export var starting_state: State
 
 var current_state: State
@@ -11,6 +12,7 @@ func init(subject: Character) -> void:
 	for child in get_children():
 		child.subject = subject
 		child.director = director
+		child.animation_player = animation_player
 		child.signal_state_change = signal_state_change
 	change_state(starting_state)
 	signal_state_change.connect(change_state)
@@ -45,4 +47,3 @@ func process_frame(delta: float) -> void:
 	var new_state = current_state.process_frame(delta)
 	if new_state:
 		change_state(new_state)
-
