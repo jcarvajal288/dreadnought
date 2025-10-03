@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ct3e47jw21px5"]
+[gd_scene load_steps=39 format=3 uid="uid://ct3e47jw21px5"]
 
 [ext_resource type="Texture2D" uid="uid://bibu55cnuifyx" path="res://Entities/Characters/Dreadnought/art/body_all.png" id="1_80p8h"]
 [ext_resource type="Script" uid="uid://1fcchhocklpr" path="res://Entities/Characters/Dreadnought/dreadnought.gd" id="1_gw7rp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="6_jed1k"]
 [ext_resource type="PackedScene" uid="uid://cohja875go8ys" path="res://Entities/Characters/Components/StateMachine/States/Idle/idle.tscn" id="7_87ykq"]
 [ext_resource type="PackedScene" uid="uid://fayrdn63ep0c" path="res://Entities/Characters/Components/StateMachine/States/Move/move.tscn" id="8_6noo1"]
+[ext_resource type="PackedScene" uid="uid://cvx2jxffc66tr" path="res://Entities/Characters/Components/StateMachine/States/Shoot/shoot.tscn" id="9_6noo1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87ykq"]
 radius = 6.0
@@ -547,8 +548,14 @@ director = NodePath("../InputDirector")
 animation_player = NodePath("../BodyAnimationPlayer")
 starting_state = NodePath("Idle")
 
-[node name="Idle" parent="StateMachine" node_paths=PackedStringArray("move_state") instance=ExtResource("7_87ykq")]
+[node name="Idle" parent="StateMachine" node_paths=PackedStringArray("move_state", "shoot_state") instance=ExtResource("7_87ykq")]
 move_state = NodePath("../Move")
+shoot_state = NodePath("../Shoot")
 
-[node name="Move" parent="StateMachine" node_paths=PackedStringArray("idle_state") instance=ExtResource("8_6noo1")]
+[node name="Move" parent="StateMachine" node_paths=PackedStringArray("idle_state", "shoot_state") instance=ExtResource("8_6noo1")]
 idle_state = NodePath("../Idle")
+shoot_state = NodePath("../Shoot")
+
+[node name="Shoot" parent="StateMachine" node_paths=PackedStringArray("idle_state", "move_state") instance=ExtResource("9_6noo1")]
+idle_state = NodePath("../Idle")
+move_state = NodePath("../Move")

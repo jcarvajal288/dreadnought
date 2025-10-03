@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvx2jxffc66tr"]
+
+[ext_resource type="Script" uid="uid://be1ib6p2qfg5k" path="res://Entities/Characters/Components/StateMachine/States/Shoot/shoot.gd" id="1_sypj1"]
+
+[node name="Shoot" type="Node"]
+script = ExtResource("1_sypj1")
+animation_name = "shoot"
+animation_type = 2
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"
