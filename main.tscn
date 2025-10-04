@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://j0jt7alhetw"]
+[gd_scene load_steps=4 format=3 uid="uid://j0jt7alhetw"]
 
 [ext_resource type="PackedScene" uid="uid://ct3e47jw21px5" path="res://Entities/Characters/Dreadnought/dreadnought.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cwmbhr8cgn78e" path="res://Levels/SpaceDerelict/TestLevel.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b754rm01txrfg" path="res://Entities/Characters/Enemies/SwarmAlien/SwarmAlien.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node"]
 
@@ -11,3 +12,6 @@ position = Vector2(191.44, 133.65)
 [node name="Camera2D" type="Camera2D" parent="Dreadnought"]
 
 [node name="TestLevel" parent="." instance=ExtResource("2_0xm2m")]
+
+[node name="SwarmAlien" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(238, 116)

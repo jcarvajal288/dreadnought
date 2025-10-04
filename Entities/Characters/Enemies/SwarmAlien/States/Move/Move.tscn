@@ -4,4 +4,6 @@
 
 [node name="Move" type="Node"]
 script = ExtResource("1_5fnfx")
+animation_name = "move"
+animation_type = 1
 metadata/_custom_type_script = "uid://wqm3fo1ec63x"

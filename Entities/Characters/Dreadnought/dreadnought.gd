@@ -5,20 +5,12 @@ class_name Dreadnought extends Character
 @onready var leg_animation_player = $LegAnimationPlayer
 
 func _ready() -> void:
-	$StateMachine.init(self)
 	speed = 25
+	$StateMachine.init(self)
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	$StateMachine.process_input(event)
-		
-	
-func _physics_process(delta):
-	$StateMachine.process_physics(delta)
-
-
-func _process(delta: float) -> void:
-	$StateMachine.process_frame(delta)
+func _physics_process(_delta):
+	Global.PLAYER_POSITION = self.global_position
 
 
 func shoot(direction: Vector2) -> void:

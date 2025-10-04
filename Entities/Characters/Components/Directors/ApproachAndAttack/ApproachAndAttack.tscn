@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2v1g7yqk0taq"]
+
+[ext_resource type="Script" uid="uid://cetkj8vk4ql1o" path="res://Entities/Characters/Components/Directors/ApproachAndAttack/approach_and_attack.gd" id="1_tsaxk"]
+
+[node name="ApproachAndAttack" type="Node"]
+script = ExtResource("1_tsaxk")
+metadata/_custom_type_script = "uid://dvxatnckq33k5"

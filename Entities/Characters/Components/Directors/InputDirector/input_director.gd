@@ -1,13 +1,11 @@
 class_name InputDirector extends Director
 
-var movement_vector = Vector2.ZERO
 var shooting_vector = Vector2.ZERO
-
-@export var subject: CharacterBody2D
 
 
 func reset() -> void:
-	movement_vector = Vector2.ZERO
+	super()
+	shooting_vector = Vector2.ZERO
 
 
 func _physics_process(_delta: float) -> void:
