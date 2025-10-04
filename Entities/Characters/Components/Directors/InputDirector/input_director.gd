@@ -20,7 +20,11 @@ func run_legs():
 	subject.leg_animation_player.set_facing(movement_vector)
 	if movement_vector == Vector2.ZERO:
 		subject.leg_animation_player.play_with_facing("idle")
+		if $LegStompSFXPlayer.playing:
+			$LegStompSFXPlayer.stop()
 	else:
 		subject.leg_animation_player.play_with_facing("move")
+		if not $LegStompSFXPlayer.playing:
+			$LegStompSFXPlayer.play()
 	subject.velocity = movement_vector * subject.speed
 	subject.move_and_slide()
