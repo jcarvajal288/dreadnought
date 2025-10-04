@@ -1,6 +1,7 @@
-[gd_scene load_steps=75 format=3 uid="uid://cvfxq0ik2ki7e"]
+[gd_scene load_steps=76 format=3 uid="uid://cvfxq0ik2ki7e"]
 
 [ext_resource type="Texture2D" uid="uid://ck4qwhysjnbcp" path="res://Entities/Characters/Dreadnought/BulletImpact/art/Shoot_Projectile_Impacts.png" id="1_73aww"]
+[ext_resource type="Script" uid="uid://dk42534loeua6" path="res://Entities/Characters/Dreadnought/BulletImpact/bullet_impact.gd" id="1_drkgv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_drkgv"]
 atlas = ExtResource("1_73aww")
@@ -555,6 +556,8 @@ animations = [{
 }]
 
 [node name="BulletImpact" type="Node2D"]
+z_index = 2
+script = ExtResource("1_drkgv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1ylma")

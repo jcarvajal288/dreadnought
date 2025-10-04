@@ -7,3 +7,6 @@ script = ExtResource("1_sypj1")
 animation_name = "shoot"
 animation_type = 2
 metadata/_custom_type_script = "uid://wqm3fo1ec63x"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5

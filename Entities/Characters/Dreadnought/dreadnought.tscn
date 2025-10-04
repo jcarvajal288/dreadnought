@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://ct3e47jw21px5"]
+[gd_scene load_steps=40 format=3 uid="uid://ct3e47jw21px5"]
 
 [ext_resource type="Texture2D" uid="uid://bibu55cnuifyx" path="res://Entities/Characters/Dreadnought/art/body_all.png" id="1_80p8h"]
 [ext_resource type="Script" uid="uid://1fcchhocklpr" path="res://Entities/Characters/Dreadnought/dreadnought.gd" id="1_gw7rp"]
+[ext_resource type="PackedScene" uid="uid://cvfxq0ik2ki7e" path="res://Entities/Characters/Dreadnought/BulletImpact/BulletImpact.tscn" id="2_jd7od"]
 [ext_resource type="Texture2D" uid="uid://bf07ppo8pybij" path="res://Entities/Characters/Dreadnought/art/legs_all.png" id="2_vwxon"]
 [ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="3_vwxon"]
 [ext_resource type="PackedScene" uid="uid://25kncp2goi8g" path="res://Entities/Characters/Components/Directors/InputDirector/InputDirector.tscn" id="4_ojlrc"]
@@ -508,6 +509,7 @@ _data = {
 
 [node name="Dreadnought" type="CharacterBody2D"]
 script = ExtResource("1_gw7rp")
+bullet_impact_scene = ExtResource("2_jd7od")
 
 [node name="BodySprite" type="Sprite2D" parent="."]
 z_index = 6
@@ -559,3 +561,5 @@ shoot_state = NodePath("../Shoot")
 [node name="Shoot" parent="StateMachine" node_paths=PackedStringArray("idle_state", "move_state") instance=ExtResource("9_6noo1")]
 idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
+
+[connection signal="shot_fired" from="StateMachine/Shoot" to="." method="shoot"]
