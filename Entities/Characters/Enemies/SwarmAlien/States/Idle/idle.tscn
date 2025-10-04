@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://o4pfs81aa6dn"]
+
+[ext_resource type="Script" uid="uid://csm8ey8qo8ru8" path="res://Entities/Characters/Enemies/SwarmAlien/States/Idle/idle.gd" id="1_dksiv"]
+
+[node name="Idle" type="Node"]
+script = ExtResource("1_dksiv")
+animation_name = "idle"
+animation_type = 1
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"

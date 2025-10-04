@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://25kncp2goi8g" path="res://Entities/Characters/Components/Directors/InputDirector/InputDirector.tscn" id="4_ojlrc"]
 [ext_resource type="AudioStream" uid="uid://c8waehm7jpunv" path="res://Entities/Characters/Dreadnought/sfx/robot-heavy-mechanical-footsteps-194039.mp3" id="6_2asqk"]
 [ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="6_jed1k"]
-[ext_resource type="PackedScene" uid="uid://cohja875go8ys" path="res://Entities/Characters/Components/StateMachine/States/Idle/idle.tscn" id="7_87ykq"]
-[ext_resource type="PackedScene" uid="uid://fayrdn63ep0c" path="res://Entities/Characters/Components/StateMachine/States/Move/move.tscn" id="8_6noo1"]
-[ext_resource type="PackedScene" uid="uid://cvx2jxffc66tr" path="res://Entities/Characters/Components/StateMachine/States/Shoot/shoot.tscn" id="9_6noo1"]
+[ext_resource type="PackedScene" uid="uid://cohja875go8ys" path="res://Entities/Characters/Dreadnought/States/Idle/idle.tscn" id="7_87ykq"]
+[ext_resource type="PackedScene" uid="uid://fayrdn63ep0c" path="res://Entities/Characters/Dreadnought/States/Move/move.tscn" id="8_6noo1"]
+[ext_resource type="PackedScene" uid="uid://cvx2jxffc66tr" path="res://Entities/Characters/Dreadnought/States/Shoot/shoot.tscn" id="9_6noo1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87ykq"]
 radius = 6.0

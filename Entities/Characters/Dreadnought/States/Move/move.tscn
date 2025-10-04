@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fayrdn63ep0c"]
 
-[ext_resource type="Script" uid="uid://ck3iy5ei6dj5y" path="res://Entities/Characters/Components/StateMachine/States/Move/move.gd" id="1_0vlkc"]
+[ext_resource type="Script" uid="uid://ck3iy5ei6dj5y" path="res://Entities/Characters/Dreadnought/States/Move/move.gd" id="1_0vlkc"]
 
 [node name="Move" type="Node"]
 script = ExtResource("1_0vlkc")

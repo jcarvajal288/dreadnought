@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://4xtj3t8rjvjp"]
+
+[ext_resource type="Script" uid="uid://lutbjqn6tggh" path="res://Entities/Characters/Enemies/SwarmAlien/States/Spawn/spawn.gd" id="1_dgc7y"]
+
+[node name="Spawn" type="Node"]
+script = ExtResource("1_dgc7y")
+animation_name = "spawn"
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"

@@ -1,6 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://b754rm01txrfg"]
+[gd_scene load_steps=30 format=3 uid="uid://b754rm01txrfg"]
 
 [ext_resource type="Texture2D" uid="uid://vhrhuafceojw" path="res://Entities/Characters/Enemies/SwarmAlien/art/SwarmAlien_all.png" id="1_daqj7"]
+[ext_resource type="Script" uid="uid://cctcgf3w0n51a" path="res://Entities/Characters/Enemies/enemy.gd" id="1_l86pn"]
+[ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="2_qer54"]
+[ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="3_3vsi2"]
+[ext_resource type="PackedScene" uid="uid://4xtj3t8rjvjp" path="res://Entities/Characters/Enemies/SwarmAlien/States/Spawn/spawn.tscn" id="4_t4p1i"]
+[ext_resource type="PackedScene" uid="uid://o4pfs81aa6dn" path="res://Entities/Characters/Enemies/SwarmAlien/States/Idle/idle.tscn" id="5_l86pn"]
+[ext_resource type="PackedScene" uid="uid://dxjc5xbo6t1i1" path="res://Entities/Characters/Enemies/SwarmAlien/States/Move/Move.tscn" id="7_bjoc7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjg7u"]
 radius = 4.1231055
@@ -375,6 +381,7 @@ _data = {
 }
 
 [node name="SwarmAlien" type="CharacterBody2D"]
+script = ExtResource("1_l86pn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sjg7u")
@@ -388,3 +395,16 @@ vframes = 9
 libraries = {
 &"": SubResource("AnimationLibrary_sjg7u")
 }
+script = ExtResource("2_qer54")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("animation_player", "starting_state") instance=ExtResource("3_3vsi2")]
+animation_player = NodePath("../AnimationPlayer")
+starting_state = NodePath("Spawn")
+
+[node name="Spawn" parent="StateMachine" instance=ExtResource("4_t4p1i")]
+
+[node name="Idle" parent="StateMachine" node_paths=PackedStringArray("move_state") instance=ExtResource("5_l86pn")]
+move_state = NodePath("../Move")
+
+[node name="Move" parent="StateMachine" node_paths=PackedStringArray("idle_state") instance=ExtResource("7_bjoc7")]
+idle_state = NodePath("../Idle")

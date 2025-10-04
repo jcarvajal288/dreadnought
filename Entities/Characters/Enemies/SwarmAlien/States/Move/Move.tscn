@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxjc5xbo6t1i1"]
+
+[ext_resource type="Script" uid="uid://d1th4a8v7vsf8" path="res://Entities/Characters/Enemies/SwarmAlien/States/Move/move.gd" id="1_5fnfx"]
+
+[node name="Move" type="Node"]
+script = ExtResource("1_5fnfx")
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"
