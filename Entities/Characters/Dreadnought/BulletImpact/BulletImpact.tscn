@@ -1,7 +1,8 @@
-[gd_scene load_steps=76 format=3 uid="uid://cvfxq0ik2ki7e"]
+[gd_scene load_steps=78 format=3 uid="uid://cvfxq0ik2ki7e"]
 
 [ext_resource type="Texture2D" uid="uid://ck4qwhysjnbcp" path="res://Entities/Characters/Dreadnought/BulletImpact/art/Shoot_Projectile_Impacts.png" id="1_73aww"]
 [ext_resource type="Script" uid="uid://dk42534loeua6" path="res://Entities/Characters/Dreadnought/BulletImpact/bullet_impact.gd" id="1_drkgv"]
+[ext_resource type="PackedScene" uid="uid://duuvlrw71sgtf" path="res://Entities/Characters/Components/Hitbox/Hitbox.tscn" id="3_wsjjc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_drkgv"]
 atlas = ExtResource("1_73aww")
@@ -555,6 +556,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsjjc"]
+radius = 15.0
+
 [node name="BulletImpact" type="Node2D"]
 z_index = 2
 script = ExtResource("1_drkgv")
@@ -562,3 +566,12 @@ script = ExtResource("1_drkgv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1ylma")
 animation = &"impactUpLeft"
+frame = 3
+
+[node name="Hitbox" parent="." instance=ExtResource("3_wsjjc")]
+damage = 1
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_wsjjc")
+
+[editable path="Hitbox"]
