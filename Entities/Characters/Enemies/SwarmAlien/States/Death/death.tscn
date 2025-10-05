@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://yhp4hwujowqf"]
+[gd_scene load_steps=3 format=3 uid="uid://yhp4hwujowqf"]
 
 [ext_resource type="Script" uid="uid://b6jyc7t8jlnaa" path="res://Entities/Characters/Enemies/SwarmAlien/States/Death/death.gd" id="1_iom2a"]
+[ext_resource type="AudioStream" uid="uid://dydj14ckh5pyx" path="res://Entities/Characters/Enemies/SwarmAlien/_sfx/05_Zombie_death.wav" id="2_rme1h"]
 
 [node name="Death" type="Node"]
 script = ExtResource("1_iom2a")
 animation_name = "death"
 metadata/_custom_type_script = "uid://wqm3fo1ec63x"
+
+[node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rme1h")

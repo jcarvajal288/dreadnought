@@ -8,7 +8,7 @@ func _on_death() -> void:
 func enter() -> void:
 	super()
 	subject.velocity = Vector2.ZERO
-	# $DeathSFX.play()
+	$DeathSFX.play()
 
 
 func _on_animation_finished(anim_name: String) -> void:

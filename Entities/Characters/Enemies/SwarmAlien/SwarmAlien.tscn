@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://b754rm01txrfg"]
 
-[ext_resource type="Texture2D" uid="uid://vhrhuafceojw" path="res://Entities/Characters/Enemies/SwarmAlien/art/SwarmAlien_all.png" id="1_daqj7"]
+[ext_resource type="Texture2D" uid="uid://vhrhuafceojw" path="res://Entities/Characters/Enemies/SwarmAlien/_art/SwarmAlien_all.png" id="1_daqj7"]
 [ext_resource type="Script" uid="uid://cctcgf3w0n51a" path="res://Entities/Characters/Enemies/enemy.gd" id="1_l86pn"]
 [ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="2_qer54"]
 [ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="3_3vsi2"]
