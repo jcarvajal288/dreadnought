@@ -1,12 +1,12 @@
 [gd_scene load_steps=41 format=3 uid="uid://ct3e47jw21px5"]
 
-[ext_resource type="Texture2D" uid="uid://bibu55cnuifyx" path="res://Entities/Characters/Dreadnought/art/body_all.png" id="1_80p8h"]
+[ext_resource type="Texture2D" uid="uid://bibu55cnuifyx" path="res://Entities/Characters/Dreadnought/_art/body_all.png" id="1_80p8h"]
 [ext_resource type="Script" uid="uid://1fcchhocklpr" path="res://Entities/Characters/Dreadnought/dreadnought.gd" id="1_gw7rp"]
-[ext_resource type="PackedScene" uid="uid://cvfxq0ik2ki7e" path="res://Entities/Characters/Dreadnought/BulletImpact/BulletImpact.tscn" id="2_jd7od"]
-[ext_resource type="Texture2D" uid="uid://bf07ppo8pybij" path="res://Entities/Characters/Dreadnought/art/legs_all.png" id="2_vwxon"]
+[ext_resource type="PackedScene" uid="uid://b3jaq0ywuk1tg" path="res://Entities/Characters/Dreadnought/BulletSpawner/BulletSpawner.tscn" id="2_2asqk"]
+[ext_resource type="Texture2D" uid="uid://bf07ppo8pybij" path="res://Entities/Characters/Dreadnought/_art/legs_all.png" id="2_vwxon"]
 [ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="3_vwxon"]
 [ext_resource type="PackedScene" uid="uid://25kncp2goi8g" path="res://Entities/Characters/Components/Directors/InputDirector/InputDirector.tscn" id="4_ojlrc"]
-[ext_resource type="AudioStream" uid="uid://c8waehm7jpunv" path="res://Entities/Characters/Dreadnought/sfx/robot-heavy-mechanical-footsteps-194039.mp3" id="6_2asqk"]
+[ext_resource type="AudioStream" uid="uid://c8waehm7jpunv" path="res://Entities/Characters/Dreadnought/_sfx/robot-heavy-mechanical-footsteps-194039.mp3" id="6_2asqk"]
 [ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="6_jed1k"]
 [ext_resource type="PackedScene" uid="uid://cohja875go8ys" path="res://Entities/Characters/Dreadnought/States/Idle/idle.tscn" id="7_87ykq"]
 [ext_resource type="PackedScene" uid="uid://fayrdn63ep0c" path="res://Entities/Characters/Dreadnought/States/Move/move.tscn" id="8_6noo1"]
@@ -509,8 +509,9 @@ _data = {
 }
 
 [node name="Dreadnought" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_gw7rp")
-bullet_impact_scene = ExtResource("2_jd7od")
+bullet_spawner_scene = ExtResource("2_2asqk")
 
 [node name="BodySprite" type="Sprite2D" parent="."]
 z_index = 6

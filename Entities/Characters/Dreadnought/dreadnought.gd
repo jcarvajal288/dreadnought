@@ -1,6 +1,6 @@
 class_name Dreadnought extends Character
 
-@export var bullet_impact_scene: PackedScene
+@export var bullet_spawner_scene: PackedScene
 
 @onready var leg_animation_player = $LegAnimationPlayer
 
@@ -14,9 +14,9 @@ func _physics_process(_delta):
 
 
 func shoot(direction: Vector2) -> void:
-	var distance = Vector2(32.0, 32.0)
-	var impact_position = direction * distance
-	var impact = bullet_impact_scene.instantiate()
-	impact.set_facing(direction)
-	impact.global_position = global_position + impact_position
-	get_tree().root.add_child(impact)
+	var bullet_spawner = bullet_spawner_scene.instantiate()
+	var distance = 32.0
+	bullet_spawner.global_position = global_position + direction * distance 
+	bullet_spawner.direction = direction
+	get_tree().root.add_child(bullet_spawner)
+	bullet_spawner.set_velocity()

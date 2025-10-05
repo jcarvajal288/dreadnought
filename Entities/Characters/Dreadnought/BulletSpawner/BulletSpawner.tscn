@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3jaq0ywuk1tg"]
+
+[ext_resource type="Script" uid="uid://galrcwhpxn2t" path="res://Entities/Characters/Dreadnought/BulletSpawner/bullet_spawner.gd" id="1_hfs84"]
+[ext_resource type="PackedScene" uid="uid://cvfxq0ik2ki7e" path="res://Entities/Characters/Dreadnought/BulletImpact/BulletImpact.tscn" id="2_du16p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iprdr"]
+radius = 1.0
+
+[node name="BulletSpawner" type="RigidBody2D"]
+collision_layer = 8
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_hfs84")
+bullet_impact_scene = ExtResource("2_du16p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iprdr")
+
+[node name="Timer" type="Timer" parent="."]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bibu55cnuifyx"
-path="res://.godot/imported/body_all.png-d77ea2b5cb4fd1485fbda8eee279dd90.ctex"
+path="res://.godot/imported/body_all.png-b58de38a13709b3c6bea775650d99642.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Characters/Dreadnought/art/body_all.png"
-dest_files=["res://.godot/imported/body_all.png-d77ea2b5cb4fd1485fbda8eee279dd90.ctex"]
+source_file="res://Entities/Characters/Dreadnought/_art/body_all.png"
+dest_files=["res://.godot/imported/body_all.png-b58de38a13709b3c6bea775650d99642.ctex"]
 
 [params]
 

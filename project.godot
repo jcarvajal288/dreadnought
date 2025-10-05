@@ -50,6 +50,17 @@ shoot_down={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="walls"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="bullet"
+
+[physics]
+
+2d/default_gravity=0.0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
