@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvx2jxffc66tr"]
+[gd_scene load_steps=3 format=3 uid="uid://cvx2jxffc66tr"]
 
 [ext_resource type="Script" uid="uid://be1ib6p2qfg5k" path="res://Entities/Characters/Dreadnought/States/Shoot/shoot.gd" id="1_sypj1"]
+[ext_resource type="AudioStream" uid="uid://dr652hc540txe" path="res://Entities/Characters/Dreadnought/sfx/072807_heavy-machine-gun-50-caliber-39765.mp3" id="2_7ukfq"]
 
 [node name="Shoot" type="Node"]
 script = ExtResource("1_sypj1")
@@ -9,4 +10,8 @@ animation_type = 2
 metadata/_custom_type_script = "uid://wqm3fo1ec63x"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7ukfq")
+max_polyphony = 4

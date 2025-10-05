@@ -33,3 +33,4 @@ func process_frame(_delta: float) -> State:
 
 func fire_shot() -> void:
 	shot_fired.emit(director.shooting_vector)
+	$AudioStreamPlayer2D.play()
