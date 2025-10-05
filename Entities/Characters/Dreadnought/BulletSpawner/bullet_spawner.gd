@@ -21,7 +21,7 @@ func spawn_bullet_impact() -> void:
 	var impact = bullet_impact_scene.instantiate()
 	impact.set_facing(direction)
 	impact.global_position = global_position 
-	get_tree().root.add_child(impact)
+	get_tree().root.call_deferred("add_child", impact)
 
 
 func on_body_entered(_body: Node2D) -> void:
