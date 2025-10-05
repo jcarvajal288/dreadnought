@@ -3,11 +3,12 @@ extends RigidBody2D
 @export var bullet_impact_scene: PackedScene
 
 var direction: Vector2
-var speed = 200
+var speed = 400
+var impact_interval = 0.03
 
 
 func _ready() -> void:
-	$Timer.start(0.12)
+	$Timer.start(impact_interval)
 	$Timer.timeout.connect(spawn_bullet_impact)
 	body_entered.connect(on_body_entered)
 
