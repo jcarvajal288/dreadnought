@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdqdwutvded6f"]
+
+[ext_resource type="Script" uid="uid://l0se4gbsbeiy" path="res://Entities/Characters/Dreadnought/FlameEffect/States/StartUp/start_up.gd" id="1_g26iw"]
+
+[node name="StartUp" type="Node"]
+script = ExtResource("1_g26iw")
+animation_name = "startUp"
+animation_type = 2
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"

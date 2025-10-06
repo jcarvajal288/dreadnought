@@ -1,7 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhqjeynmtnly6"]
+[gd_scene load_steps=22 format=3 uid="uid://bhqjeynmtnly6"]
 
+[ext_resource type="Script" uid="uid://c4t0b0pa007ud" path="res://Entities/Characters/Dreadnought/FlameEffect/flame_effect.gd" id="1_i7pny"]
 [ext_resource type="Texture2D" uid="uid://cohyahxd6xufr" path="res://Entities/Characters/Dreadnought/_art/Flamethrower_Effect_all.png" id="1_pluvx"]
 [ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="2_cbei3"]
+[ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="3_wk3f2"]
+[ext_resource type="PackedScene" uid="uid://bdqdwutvded6f" path="res://Entities/Characters/Dreadnought/FlameEffect/States/StartUp/StartUp.tscn" id="5_xcqob"]
+[ext_resource type="PackedScene" uid="uid://c6nq0aweecio5" path="res://Entities/Characters/Dreadnought/FlameEffect/States/Hold/Hold.tscn" id="6_r054v"]
+[ext_resource type="PackedScene" uid="uid://btmy3fjd3n0c1" path="res://Entities/Characters/Dreadnought/FlameEffect/States/Release/Release.tscn" id="7_poqq6"]
 
 [sub_resource type="Animation" id="Animation_pluvx"]
 length = 0.001
@@ -244,6 +249,7 @@ _data = {
 }
 
 [node name="FlameEffect" type="Node2D"]
+script = ExtResource("1_i7pny")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pluvx")
@@ -255,3 +261,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_wk3f2")
 }
 script = ExtResource("2_cbei3")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("animation_player", "starting_state") instance=ExtResource("3_wk3f2")]
+animation_player = NodePath("../AnimationPlayer")
+starting_state = NodePath("StartUp")
+
+[node name="StartUp" parent="StateMachine" node_paths=PackedStringArray("hold_state") instance=ExtResource("5_xcqob")]
+hold_state = NodePath("../Hold")
+
+[node name="Hold" parent="StateMachine" node_paths=PackedStringArray("release_state") instance=ExtResource("6_r054v")]
+release_state = NodePath("../Release")
+
+[node name="Release" parent="StateMachine" instance=ExtResource("7_poqq6")]
+
+[connection signal="flame_over" from="StateMachine/Release" to="." method="_on_flame_over"]

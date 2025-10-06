@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6nq0aweecio5"]
+
+[ext_resource type="Script" uid="uid://cdga2sk0fekui" path="res://Entities/Characters/Dreadnought/FlameEffect/States/Hold/hold.gd" id="1_x1kca"]
+
+[node name="Hold" type="Node"]
+script = ExtResource("1_x1kca")
+animation_name = "hold"
+animation_type = 2
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"
