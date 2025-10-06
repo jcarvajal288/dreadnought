@@ -25,11 +25,9 @@ func _on_hit(hitbox: Area2D):
 
 	
 func take_damage(damage: int):
-	print(current_health)
 	if current_health <= 0:
 		return
 	current_health -= damage
-	print(current_health)
 	if is_player_health:
 		Global.player_health_changed.emit(current_health, max_health)
 	if current_health <= 0:

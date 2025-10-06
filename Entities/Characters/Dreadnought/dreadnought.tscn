@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ct3e47jw21px5"]
+[gd_scene load_steps=46 format=3 uid="uid://ct3e47jw21px5"]
 
 [ext_resource type="Texture2D" uid="uid://bibu55cnuifyx" path="res://Entities/Characters/Dreadnought/_art/body_all.png" id="1_80p8h"]
 [ext_resource type="Script" uid="uid://1fcchhocklpr" path="res://Entities/Characters/Dreadnought/dreadnought.gd" id="1_gw7rp"]
@@ -29,6 +29,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BodySprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [160]
 }
 
 [sub_resource type="Animation" id="Animation_ojlrc"]
@@ -171,9 +183,85 @@ tracks/0/keys = {
 "values": [24, 25, 26, 27, 28, 29, 30, 31]
 }
 
+[sub_resource type="Animation" id="Animation_n4wib"]
+resource_name = "flameDownRight"
+length = 1.50001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174]
+}
+
+[sub_resource type="Animation" id="Animation_pmnev"]
+resource_name = "flameDownLeft"
+length = 1.50001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190]
+}
+
+[sub_resource type="Animation" id="Animation_iloe4"]
+resource_name = "flameUpRight"
+length = 1.50001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206]
+}
+
+[sub_resource type="Animation" id="Animation_4riwq"]
+resource_name = "flameUpLeft"
+length = 1.50001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ojlrc"]
 _data = {
 &"RESET": SubResource("Animation_vwxon"),
+&"flameDownLeft": SubResource("Animation_pmnev"),
+&"flameDownRight": SubResource("Animation_n4wib"),
+&"flameUpLeft": SubResource("Animation_4riwq"),
+&"flameUpRight": SubResource("Animation_iloe4"),
 &"idleDownLeft": SubResource("Animation_ojlrc"),
 &"idleDownRight": SubResource("Animation_80p8h"),
 &"idleUpLeft": SubResource("Animation_jed1k"),
@@ -487,9 +575,13 @@ tracks/0/keys = {
 "values": [139, 140, 141, 142, 143, 144]
 }
 
+[sub_resource type="Animation" id="Animation_f3tfa"]
+resource_name = "flameDownRight"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a85qw"]
 _data = {
 &"RESET": SubResource("Animation_fk7k0"),
+&"flameDownRight": SubResource("Animation_f3tfa"),
 &"idleDownLeft": SubResource("Animation_p65r0"),
 &"idleDownRight": SubResource("Animation_2asqk"),
 &"idleUpLeft": SubResource("Animation_8hp7i"),
@@ -517,7 +609,7 @@ bullet_spawner_scene = ExtResource("2_2asqk")
 z_index = 6
 texture = ExtResource("1_80p8h")
 hframes = 8
-vframes = 20
+vframes = 28
 
 [node name="LegSprite" type="Sprite2D" parent="."]
 z_index = 5
