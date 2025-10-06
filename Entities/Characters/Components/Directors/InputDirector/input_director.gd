@@ -1,16 +1,19 @@
 class_name InputDirector extends Director
 
 var shooting_vector = Vector2.ZERO
+var flamethrower_toggled = false
 
 
 func reset() -> void:
 	super()
 	shooting_vector = Vector2.ZERO
+	flamethrower_toggled = false
 
 
 func _physics_process(_delta: float) -> void:
 	movement_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	shooting_vector = Input.get_vector("shoot_left", "shoot_right", "shoot_up", "shoot_down")
+	flamethrower_toggled = Input.is_action_pressed("shoot_flame")
 	run_legs()
 
 

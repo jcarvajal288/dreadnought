@@ -31,9 +31,26 @@ func play_with_facing(anim_name: String):
 	self.play(anim_name + facing)
 
 
+func play_four_way(anim_name: String, direction: Vector2):
+	var dirString = convert_to_4_way(direction)
+	self.play(anim_name + dirString)
+
+
 func play_eight_way(anim_name: String, direction: Vector2):
 	var dirString = convert_to_8_way(direction)
 	self.play(anim_name + dirString)
+
+
+func convert_to_4_way(direction: Vector2) -> String:
+	var angle = direction.angle()
+	if NORTH_NORTH_WEST < angle and angle <= EAST_NORTH_EAST:
+		return "UpRight"
+	elif EAST_NORTH_EAST < angle and angle <= SOUTH_SOUTH_EAST:
+		return "DownRight"
+	elif SOUTH_SOUTH_EAST < angle and angle <= WEST_SOUTH_WEST:
+		return "DownLeft"
+	else:
+		return "UpLeft"
 
 
 func convert_to_8_way(direction: Vector2) -> String:

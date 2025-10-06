@@ -2,6 +2,7 @@ extends State
 
 @export var idle_state: State
 @export var move_state: State
+@export var flame_state: State
 
 signal shot_fired
 
@@ -28,6 +29,8 @@ func process_frame(_delta: float) -> State:
 			return idle_state
 		else:
 			return move_state
+	elif director.flamethrower_toggled:
+		return flame_state
 	return null
 
 

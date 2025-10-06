@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://lm78471h5wg4"]
+
+[ext_resource type="Script" uid="uid://dur3ta2sqo1g" path="res://Entities/Characters/Dreadnought/States/Flame/flame.gd" id="1_lh3o5"]
+
+[node name="Flame" type="Node"]
+script = ExtResource("1_lh3o5")
+animation_name = "flame"
+animation_type = 2
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"
