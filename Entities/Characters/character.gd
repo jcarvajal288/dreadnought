@@ -6,7 +6,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	$StateMachine.process_input(event)
 		
 	
-func _physics_process(delta):
+func _physics_process(delta: float):
 	$StateMachine.process_physics(delta)
 
 

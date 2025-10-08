@@ -1,6 +1,5 @@
 extends Node2D
 
-var director: Director
 
 func _ready() -> void:
 	$AnimationPlayer.animation_finished.connect(change_animation)
@@ -23,7 +22,10 @@ func change_animation(anim_name: String) -> void:
 
 
 func _process(_delta: float) -> void:
-	$AnimationPlayer.set_facing_4_way(director.shooting_vector)
-	$AnimationPlayer.play_with_facing($AnimationPlayer.current_animation)
-	if $AnimationPlayer.current_animation.begins_with("hold") and not director.flamethrower_toggled:
+	var shooting_vector = Input.get_vector("shoot_left", "shoot_right", "shoot_up", "shoot_down")
+	var flamethrower_toggled = Input.is_action_pressed("shoot_flame")
+	var animation_name = $AnimationPlayer.current_animation.replace($AnimationPlayer.facing, "")
+	$AnimationPlayer.set_facing_4_way(shooting_vector)
+	$AnimationPlayer.play_with_facing(animation_name)
+	if $AnimationPlayer.current_animation.begins_with("hold") and not flamethrower_toggled:
 		$AnimationPlayer.play_with_facing("release")
