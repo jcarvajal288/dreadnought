@@ -19,3 +19,4 @@ enum CollisionLayer {
 	PLAYER = 2,
 	ENEMY = 3,
 }
+

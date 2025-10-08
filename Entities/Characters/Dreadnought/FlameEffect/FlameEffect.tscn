@@ -1,12 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bhqjeynmtnly6"]
+[gd_scene load_steps=18 format=3 uid="uid://bhqjeynmtnly6"]
 
 [ext_resource type="Script" uid="uid://c4t0b0pa007ud" path="res://Entities/Characters/Dreadnought/FlameEffect/flame_effect.gd" id="1_i7pny"]
 [ext_resource type="Texture2D" uid="uid://cohyahxd6xufr" path="res://Entities/Characters/Dreadnought/_art/Flamethrower_Effect_all.png" id="1_pluvx"]
 [ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="2_cbei3"]
-[ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="3_wk3f2"]
-[ext_resource type="PackedScene" uid="uid://bdqdwutvded6f" path="res://Entities/Characters/Dreadnought/FlameEffect/States/StartUp/StartUp.tscn" id="5_xcqob"]
-[ext_resource type="PackedScene" uid="uid://c6nq0aweecio5" path="res://Entities/Characters/Dreadnought/FlameEffect/States/Hold/Hold.tscn" id="6_r054v"]
-[ext_resource type="PackedScene" uid="uid://btmy3fjd3n0c1" path="res://Entities/Characters/Dreadnought/FlameEffect/States/Release/Release.tscn" id="7_poqq6"]
 
 [sub_resource type="Animation" id="Animation_pluvx"]
 length = 0.001
@@ -21,142 +17,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_ianj1"]
-resource_name = "startUpDownLeft"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [15, 16, 17, 18]
-}
-
-[sub_resource type="Animation" id="Animation_i7pny"]
-resource_name = "releaseDownLeft"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.100000024, 0.20000005, 0.29999995),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [26, 27, 28, 29]
-}
-
-[sub_resource type="Animation" id="Animation_xcqob"]
-resource_name = "startUpDownRight"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_r054v"]
-resource_name = "releaseDownRight"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(5.9604645e-08, 0.10000008, 0.2000001, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [11, 12, 13, 14]
-}
-
-[sub_resource type="Animation" id="Animation_poqq6"]
-resource_name = "startUpUpLeft"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [45, 46, 47, 48]
-}
-
-[sub_resource type="Animation" id="Animation_mfyrb"]
-resource_name = "releaseUpLeft"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.100000024, 0.20000005, 0.29999995),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [56, 57, 58, 59]
-}
-
-[sub_resource type="Animation" id="Animation_be1r4"]
-resource_name = "startUpUpRight"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [30, 31, 32, 33]
-}
-
-[sub_resource type="Animation" id="Animation_pweqy"]
-resource_name = "releaseUpRight"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.100000024, 0.20000005, 0.29999995),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [41, 42, 43, 44]
 }
 
 [sub_resource type="Animation" id="Animation_wk3f2"]
@@ -231,6 +91,142 @@ tracks/0/keys = {
 "values": [34, 35, 36, 37, 38, 39, 40]
 }
 
+[sub_resource type="Animation" id="Animation_i7pny"]
+resource_name = "releaseDownLeft"
+length = 0.40001002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.20000005, 0.29999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [26, 27, 28, 29]
+}
+
+[sub_resource type="Animation" id="Animation_r054v"]
+resource_name = "releaseDownRight"
+length = 0.40001002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.9604645e-08, 0.10000008, 0.2000001, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_mfyrb"]
+resource_name = "releaseUpLeft"
+length = 0.40001002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.20000005, 0.29999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 58, 59]
+}
+
+[sub_resource type="Animation" id="Animation_pweqy"]
+resource_name = "releaseUpRight"
+length = 0.40001002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.20000005, 0.29999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [41, 42, 43, 44]
+}
+
+[sub_resource type="Animation" id="Animation_ianj1"]
+resource_name = "startUpDownLeft"
+length = 0.40001002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [15, 16, 17, 18]
+}
+
+[sub_resource type="Animation" id="Animation_xcqob"]
+resource_name = "startUpDownRight"
+length = 0.40001002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_poqq6"]
+resource_name = "startUpUpLeft"
+length = 0.40001002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [45, 46, 47, 48]
+}
+
+[sub_resource type="Animation" id="Animation_be1r4"]
+resource_name = "startUpUpRight"
+length = 0.40001002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [30, 31, 32, 33]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wk3f2"]
 _data = {
 &"RESET": SubResource("Animation_pluvx"),
@@ -261,17 +257,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_wk3f2")
 }
 script = ExtResource("2_cbei3")
-
-[node name="StateMachine" parent="." node_paths=PackedStringArray("animation_player", "starting_state") instance=ExtResource("3_wk3f2")]
-animation_player = NodePath("../AnimationPlayer")
-starting_state = NodePath("StartUp")
-
-[node name="StartUp" parent="StateMachine" node_paths=PackedStringArray("hold_state") instance=ExtResource("5_xcqob")]
-hold_state = NodePath("../Hold")
-
-[node name="Hold" parent="StateMachine" node_paths=PackedStringArray("release_state") instance=ExtResource("6_r054v")]
-release_state = NodePath("../Release")
-
-[node name="Release" parent="StateMachine" instance=ExtResource("7_poqq6")]
-
-[connection signal="flame_over" from="StateMachine/Release" to="." method="_on_flame_over"]

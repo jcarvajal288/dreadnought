@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://btmy3fjd3n0c1"]
-
-[ext_resource type="Script" uid="uid://pbac2sseh2sc" path="res://Entities/Characters/Dreadnought/FlameEffect/States/Release/release.gd" id="1_e6dim"]
-
-[node name="Release" type="Node"]
-script = ExtResource("1_e6dim")
-animation_name = "release"
-metadata/_custom_type_script = "uid://wqm3fo1ec63x"

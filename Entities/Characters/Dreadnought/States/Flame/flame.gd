@@ -4,9 +4,11 @@ extends State
 @export var move_state: State
 @export var shoot_state: State
 
+signal flamethrower_fired
 
 func enter() -> void:
 	super()
+	flamethrower_fired.emit(director.shooting_vector)
 
 
 func exit() -> void:

@@ -1,5 +1,8 @@
 extends AnimationPlayer
 
+var facing = "DownRight"
+
+
 const EAST_NORTH_EAST = -PI / 8
 const NORTH_NORTH_EAST = -3 * PI / 8
 const NORTH_NORTH_WEST = -5 * PI / 8
@@ -8,8 +11,6 @@ const EAST_SOUTH_EAST = PI / 8
 const SOUTH_SOUTH_EAST = 3 * PI / 8
 const SOUTH_SOUTH_WEST = 5 * PI / 8
 const WEST_SOUTH_WEST = 7 * PI / 8
-
-var facing = "DownRight"
 
 
 func set_facing(direction: Vector2):
@@ -25,6 +26,10 @@ func set_facing(direction: Vector2):
 			facing = "DownLeft"
 		else:
 			facing = "UpLeft"
+
+
+func set_facing_4_way(direction: Vector2):
+	facing = convert_to_4_way(direction)
 
 
 func play_with_facing(anim_name: String):

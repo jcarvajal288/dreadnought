@@ -1,6 +1,7 @@
 class_name Dreadnought extends Character
 
 @export var bullet_spawner_scene: PackedScene
+@export var flame_effect_scene: PackedScene
 
 @onready var leg_animation_player = $LegAnimationPlayer
 
@@ -20,3 +21,10 @@ func shoot(direction: Vector2) -> void:
 	bullet_spawner.direction = direction
 	get_tree().root.add_child(bullet_spawner)
 	bullet_spawner.set_velocity()
+
+
+func flamethrower(direction: Vector2) -> void:
+	var flame_effect = flame_effect_scene.instantiate()
+	flame_effect.director = $InputDirector
+	add_child(flame_effect)
+	flame_effect.start(direction)
