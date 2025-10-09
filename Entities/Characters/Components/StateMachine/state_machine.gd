@@ -19,6 +19,8 @@ func init(subject: Character) -> void:
 
 
 func change_state(new_state: State) -> void:
+	if new_state == current_state:
+		return
 	if current_state:
 		current_state.exit()
 	current_state = new_state

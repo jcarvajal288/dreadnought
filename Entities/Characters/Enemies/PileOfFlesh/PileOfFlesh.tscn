@@ -1,10 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://xnkckinywik3"]
+[gd_scene load_steps=23 format=3 uid="uid://xnkckinywik3"]
 
 [ext_resource type="Texture2D" uid="uid://1dcvjx3lnfkf" path="res://Entities/Characters/Enemies/PileOfFlesh/_art/PileOfFlesh_most.png" id="1_465vo"]
 [ext_resource type="Script" uid="uid://bhna0r2brta1p" path="res://Entities/Characters/Enemies/PileOfFlesh/pile_of_flesh.gd" id="1_l63yc"]
 [ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="2_yrubw"]
 [ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="4_l63yc"]
 [ext_resource type="PackedScene" uid="uid://bw0qc5gpr6n26" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Idle/Idle.tscn" id="5_l63yc"]
+[ext_resource type="PackedScene" uid="uid://b2n5la4gr48d0" path="res://Entities/Characters/Components/Health/Health.tscn" id="6_bn6cs"]
+[ext_resource type="PackedScene" uid="uid://bfhnekh5mjg2s" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Damaged/Damaged.tscn" id="6_msjkb"]
+[ext_resource type="PackedScene" uid="uid://c8l14etpg2jlb" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Death/Death.tscn" id="7_1bxex"]
+[ext_resource type="PackedScene" uid="uid://df7nuoj03q0g6" path="res://Entities/Characters/Components/Hurtbox/Hurtbox.tscn" id="7_wal6c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myv83"]
 radius = 5.0
@@ -41,6 +45,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_myv83"]
@@ -181,6 +197,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yrubw"]
 _data = {
@@ -196,6 +224,9 @@ _data = {
 &"idleUpRight": SubResource("Animation_l63yc")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_msjkb"]
+radius = 8.0
+
 [node name="PileOfFlesh" type="CharacterBody2D"]
 script = ExtResource("1_l63yc")
 
@@ -208,6 +239,7 @@ vframes = 9
 position = Vector2(0, -2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_myv83")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -220,3 +252,25 @@ animation_player = NodePath("../AnimationPlayer")
 starting_state = NodePath("Idle")
 
 [node name="Idle" parent="StateMachine" instance=ExtResource("5_l63yc")]
+
+[node name="Damaged" parent="StateMachine" node_paths=PackedStringArray("idle_state", "hurtbox") instance=ExtResource("6_msjkb")]
+idle_state = NodePath("../Idle")
+hurtbox = NodePath("../../Hurtbox")
+
+[node name="Death" parent="StateMachine" node_paths=PackedStringArray("subject_health") instance=ExtResource("7_1bxex")]
+subject_health = NodePath("../../Health")
+
+[node name="Health" parent="." instance=ExtResource("6_bn6cs")]
+max_health = 50
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("owning_character") instance=ExtResource("7_wal6c")]
+owning_character = NodePath("..")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_msjkb")
+
+[connection signal="on_hit" from="Hurtbox" to="Health" method="_on_hit"]
+[connection signal="on_hit" from="Hurtbox" to="StateMachine/Damaged" method="_on_hit"]
+
+[editable path="Hurtbox"]

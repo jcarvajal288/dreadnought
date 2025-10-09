@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfhnekh5mjg2s"]
+
+[ext_resource type="Script" uid="uid://dl77nmfnf35xk" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Damaged/damaged.gd" id="1_qowbw"]
+
+[node name="Damaged" type="Node"]
+script = ExtResource("1_qowbw")
+animation_name = "damaged"
+animation_type = 1
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"

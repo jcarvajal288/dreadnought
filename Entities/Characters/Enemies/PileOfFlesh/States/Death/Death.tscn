@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8l14etpg2jlb"]
+
+[ext_resource type="Script" uid="uid://r0opo8wppv7g" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Death/death.gd" id="1_f4hxk"]
+
+[node name="Death" type="Node"]
+script = ExtResource("1_f4hxk")
+animation_name = "death"
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"

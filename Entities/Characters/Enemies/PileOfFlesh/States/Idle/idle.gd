@@ -1,10 +1,5 @@
 extends State
 
-@export var damaged_state: State
-
-func enter() -> void:
-	super()
-
 
 func process_frame(_delta: float) -> State:
 	var direction_to_player = Global.PLAYER_POSITION - subject.global_position
