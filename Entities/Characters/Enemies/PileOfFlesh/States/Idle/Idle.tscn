@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw0qc5gpr6n26"]
+
+[ext_resource type="Script" uid="uid://cskaqi2d0vlw7" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Idle/idle.gd" id="1_i4cwa"]
+
+[node name="Idle" type="Node"]
+script = ExtResource("1_i4cwa")
+animation_name = "idle"
+animation_type = 1
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"

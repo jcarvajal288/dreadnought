@@ -1,4 +1,4 @@
-extends Character
+class_name Enemy extends Character
 
 func _init() -> void:
 	speed = 25

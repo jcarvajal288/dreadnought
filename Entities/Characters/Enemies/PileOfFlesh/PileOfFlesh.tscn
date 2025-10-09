@@ -1,7 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://xnkckinywik3"]
+[gd_scene load_steps=18 format=3 uid="uid://xnkckinywik3"]
 
 [ext_resource type="Texture2D" uid="uid://1dcvjx3lnfkf" path="res://Entities/Characters/Enemies/PileOfFlesh/_art/PileOfFlesh_most.png" id="1_465vo"]
+[ext_resource type="Script" uid="uid://bhna0r2brta1p" path="res://Entities/Characters/Enemies/PileOfFlesh/pile_of_flesh.gd" id="1_l63yc"]
 [ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="2_yrubw"]
+[ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="4_l63yc"]
+[ext_resource type="PackedScene" uid="uid://bw0qc5gpr6n26" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Idle/Idle.tscn" id="5_l63yc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myv83"]
 radius = 5.0
@@ -194,6 +197,7 @@ _data = {
 }
 
 [node name="PileOfFlesh" type="CharacterBody2D"]
+script = ExtResource("1_l63yc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_465vo")
@@ -210,3 +214,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_yrubw")
 }
 script = ExtResource("2_yrubw")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("animation_player", "starting_state") instance=ExtResource("4_l63yc")]
+animation_player = NodePath("../AnimationPlayer")
+starting_state = NodePath("Idle")
+
+[node name="Idle" parent="StateMachine" instance=ExtResource("5_l63yc")]
