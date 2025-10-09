@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://nktjpjv754to"]
+
+[ext_resource type="Script" uid="uid://bufp4opg51ps" path="res://Entities/Characters/Components/RecurringHitbox/recurring_hitbox.gd" id="1_wnr78"]
+
+[node name="RecurringHitbox" type="Area2D"]
+script = ExtResource("1_wnr78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Timer" type="Timer" parent="."]

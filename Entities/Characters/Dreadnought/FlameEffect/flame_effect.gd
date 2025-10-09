@@ -5,6 +5,10 @@ func _ready() -> void:
 	$AnimationPlayer.animation_finished.connect(change_animation)
 
 
+func set_owning_character(character: Character) -> void:
+	$HitboxPivot/RecurringHitbox.owning_character = character
+
+
 func start(direction: Vector2) -> void:
 	$AnimationPlayer.set_facing_4_way(direction)
 	if $AnimationPlayer.facing.begins_with("Up"):
@@ -27,5 +31,18 @@ func _process(_delta: float) -> void:
 	var animation_name = $AnimationPlayer.current_animation.replace($AnimationPlayer.facing, "")
 	$AnimationPlayer.set_facing_4_way(shooting_vector)
 	$AnimationPlayer.play_with_facing(animation_name)
+	set_hitbox_rotation()
 	if $AnimationPlayer.current_animation.begins_with("hold") and not flamethrower_toggled:
 		$AnimationPlayer.play_with_facing("release")
+
+
+func set_hitbox_rotation() -> void:
+	var facing = $AnimationPlayer.facing
+	if facing == "DownRight":
+		$HitboxPivot.rotation_degrees = 0.0
+	elif facing == "DownLeft":
+		$HitboxPivot.rotation_degrees = 90.0
+	elif facing == "UpLeft":
+		$HitboxPivot.rotation_degrees = 180.0
+	elif facing == "UpRight":
+		$HitboxPivot.rotation_degrees = 270.0

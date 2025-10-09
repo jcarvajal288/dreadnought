@@ -24,8 +24,7 @@ func shoot(direction: Vector2) -> void:
 
 
 func flamethrower(direction: Vector2) -> void:
-	# this also triggers when the player releases the shooting directions, 
-	# not just pressing space
 	var flame_effect = flame_effect_scene.instantiate()
 	add_child(flame_effect)
+	flame_effect.set_owning_character(self)
 	flame_effect.start(direction)
