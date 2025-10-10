@@ -423,7 +423,7 @@ idle_state = NodePath("../Idle")
 
 [node name="ApproachAndAttack" parent="." node_paths=PackedStringArray("subject") instance=ExtResource("8_38b73")]
 attack_range_pixels = 8
-tile_distance_to_notice_player = 10
+tile_distance_to_notice_player = 50
 subject = NodePath("..")
 
 [node name="Health" parent="." instance=ExtResource("9_unmgx")]

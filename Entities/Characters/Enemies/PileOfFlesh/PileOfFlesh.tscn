@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://xnkckinywik3"]
+[gd_scene load_steps=25 format=3 uid="uid://xnkckinywik3"]
 
 [ext_resource type="Texture2D" uid="uid://1dcvjx3lnfkf" path="res://Entities/Characters/Enemies/PileOfFlesh/_art/PileOfFlesh_most.png" id="1_465vo"]
 [ext_resource type="Script" uid="uid://bhna0r2brta1p" path="res://Entities/Characters/Enemies/PileOfFlesh/pile_of_flesh.gd" id="1_l63yc"]
@@ -9,28 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bfhnekh5mjg2s" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Damaged/Damaged.tscn" id="6_msjkb"]
 [ext_resource type="PackedScene" uid="uid://c8l14etpg2jlb" path="res://Entities/Characters/Enemies/PileOfFlesh/States/Death/Death.tscn" id="7_1bxex"]
 [ext_resource type="PackedScene" uid="uid://df7nuoj03q0g6" path="res://Entities/Characters/Components/Hurtbox/Hurtbox.tscn" id="7_wal6c"]
+[ext_resource type="PackedScene" uid="uid://dg4d255pycjii" path="res://Entities/Characters/Components/EnemySpawner/EnemySpawner.tscn" id="10_1bxex"]
+[ext_resource type="PackedScene" uid="uid://b754rm01txrfg" path="res://Entities/Characters/Enemies/SwarmAlien/SwarmAlien.tscn" id="11_3fxoi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myv83"]
 radius = 5.0
 height = 18.0
-
-[sub_resource type="Animation" id="Animation_465vo"]
-resource_name = "idleDownRight"
-length = 1.40002
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6]
-}
 
 [sub_resource type="Animation" id="Animation_yrubw"]
 length = 0.001
@@ -59,11 +43,10 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_myv83"]
-resource_name = "idleDownLeft"
-length = 1.40002
-loop_mode = 1
-step = 0.2
+[sub_resource type="Animation" id="Animation_wal6c"]
+resource_name = "damagedDownLeft"
+length = 0.40001002
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,46 +54,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [7, 8, 9, 10, 11, 12, 13]
-}
-
-[sub_resource type="Animation" id="Animation_l63yc"]
-resource_name = "idleUpRight"
-length = 1.40002
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [14, 15, 16, 17, 18, 19, 20]
-}
-
-[sub_resource type="Animation" id="Animation_sjg6x"]
-resource_name = "idleUpLeft"
-length = 1.40002
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [21, 22, 23, 24, 25, 26, 27]
+"values": [32, 33, 34, 35]
 }
 
 [sub_resource type="Animation" id="Animation_bn6cs"]
@@ -130,8 +77,8 @@ tracks/0/keys = {
 "values": [28, 29, 30, 31]
 }
 
-[sub_resource type="Animation" id="Animation_wal6c"]
-resource_name = "damagedDownLeft"
+[sub_resource type="Animation" id="Animation_1bxex"]
+resource_name = "damagedUpLeft"
 length = 0.40001002
 step = 0.1
 tracks/0/type = "value"
@@ -144,7 +91,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [32, 33, 34, 35]
+"values": [40, 41, 42, 43]
 }
 
 [sub_resource type="Animation" id="Animation_msjkb"]
@@ -162,23 +109,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [36, 37, 38, 39]
-}
-
-[sub_resource type="Animation" id="Animation_1bxex"]
-resource_name = "damagedUpLeft"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [40, 41, 42, 43]
 }
 
 [sub_resource type="Animation" id="Animation_3fxoi"]
@@ -208,6 +138,78 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_myv83"]
+resource_name = "idleDownLeft"
+length = 1.40002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_465vo"]
+resource_name = "idleDownRight"
+length = 1.40002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_sjg6x"]
+resource_name = "idleUpLeft"
+length = 1.40002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_l63yc"]
+resource_name = "idleUpRight"
+length = 1.40002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19, 20]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yrubw"]
@@ -270,7 +272,15 @@ owning_character = NodePath("..")
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_msjkb")
 
-[connection signal="on_hit" from="Hurtbox" to="Health" method="_on_hit"]
+[node name="EnemySpawner" parent="." instance=ExtResource("10_1bxex")]
+enemy_dict = Dictionary[PackedScene, int]({
+ExtResource("11_3fxoi"): 1
+})
+spawn_frequency = 1.0
+
+[connection signal="on_death" from="Health" to="EnemySpawner" method="despawn"]
 [connection signal="on_hit" from="Hurtbox" to="StateMachine/Damaged" method="_on_hit"]
+[connection signal="on_hit" from="Hurtbox" to="Health" method="_on_hit"]
 
 [editable path="Hurtbox"]
+[editable path="EnemySpawner"]

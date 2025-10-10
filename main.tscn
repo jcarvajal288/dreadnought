@@ -1,11 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://j0jt7alhetw"]
 
 [ext_resource type="PackedScene" uid="uid://ct3e47jw21px5" path="res://Entities/Characters/Dreadnought/dreadnought.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dnqaoriu730cf" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cwmbhr8cgn78e" path="res://Levels/SpaceDerelict/TestLevel.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://b754rm01txrfg" path="res://Entities/Characters/Enemies/SwarmAlien/SwarmAlien.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://xnkckinywik3" path="res://Entities/Characters/Enemies/PileOfFlesh/PileOfFlesh.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_lquwl")
 
 [node name="Dreadnought" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(191.44, 133.65)
@@ -14,50 +15,9 @@ position = Vector2(191.44, 133.65)
 
 [node name="TestLevel" parent="." instance=ExtResource("2_0xm2m")]
 
-[node name="SwarmAlien" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(238, 116)
-
-[node name="SwarmAlien2" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(243, 138)
-
-[node name="SwarmAlien3" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(256, 104)
-
-[node name="SwarmAlien4" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(219, 80)
-
-[node name="SwarmAlien5" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(222, 100)
-
-[node name="SwarmAlien6" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(259, 131)
-
-[node name="SwarmAlien7" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(243, 86)
-
-[node name="SwarmAlien8" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(212, 96)
-
-[node name="SwarmAlien9" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(240, 95)
-
-[node name="SwarmAlien10" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(226, 128)
-
-[node name="SwarmAlien11" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(289, 103)
-
-[node name="SwarmAlien12" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(270, 124)
-
-[node name="SwarmAlien13" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(258, 89)
-
-[node name="SwarmAlien14" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(250, 70)
-
-[node name="SwarmAlien15" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(279, 81)
-
 [node name="PileOfFlesh" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(275, 97)
+position = Vector2(272, 74)
+
+[editable path="PileOfFlesh"]
+[editable path="PileOfFlesh/Hurtbox"]
+[editable path="PileOfFlesh/EnemySpawner"]
