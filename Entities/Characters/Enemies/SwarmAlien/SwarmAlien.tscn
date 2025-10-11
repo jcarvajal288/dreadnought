@@ -492,7 +492,7 @@ attack_state = NodePath("../Attack")
 idle_state = NodePath("../Idle")
 
 [node name="ApproachAndAttack" parent="." node_paths=PackedStringArray("subject") instance=ExtResource("8_38b73")]
-attack_range_pixels = 16
+attack_range_pixels = 10
 tile_distance_to_notice_player = 50
 subject = NodePath("..")
 
