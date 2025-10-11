@@ -12,7 +12,5 @@ func _process(_delta: float) -> void:
 		movement_vector = Vector2.ZERO
 	elif distance_to_player > attack_range_pixels:
 		movement_vector = subject.global_position.direction_to(Global.PLAYER_POSITION)
-
-
-
-
+	else:
+		attack = true

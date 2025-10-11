@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ct3e47jw21px5"]
+[gd_scene load_steps=50 format=3 uid="uid://ct3e47jw21px5"]
 
 [ext_resource type="Texture2D" uid="uid://bibu55cnuifyx" path="res://Entities/Characters/Dreadnought/_art/body_all.png" id="1_80p8h"]
 [ext_resource type="Script" uid="uid://1fcchhocklpr" path="res://Entities/Characters/Dreadnought/dreadnought.gd" id="1_gw7rp"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://fayrdn63ep0c" path="res://Entities/Characters/Dreadnought/States/Move/move.tscn" id="8_6noo1"]
 [ext_resource type="PackedScene" uid="uid://cvx2jxffc66tr" path="res://Entities/Characters/Dreadnought/States/Shoot/shoot.tscn" id="9_6noo1"]
 [ext_resource type="PackedScene" uid="uid://lm78471h5wg4" path="res://Entities/Characters/Dreadnought/States/Flame/Flame.tscn" id="12_fk7k0"]
+[ext_resource type="PackedScene" uid="uid://b2n5la4gr48d0" path="res://Entities/Characters/Components/Health/Health.tscn" id="14_8hp7i"]
+[ext_resource type="PackedScene" uid="uid://df7nuoj03q0g6" path="res://Entities/Characters/Components/Hurtbox/Hurtbox.tscn" id="15_e8usa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87ykq"]
 radius = 6.0
@@ -586,8 +588,12 @@ _data = {
 &"shootUpRight": SubResource("Animation_2sncf")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_th7uu"]
+height = 36.0
+
 [node name="Dreadnought" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_gw7rp")
 bullet_spawner_scene = ExtResource("2_2asqk")
 flame_effect_scene = ExtResource("3_p65r0")
@@ -654,5 +660,24 @@ idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
 shoot_state = NodePath("../Shoot")
 
+[node name="Health" parent="." instance=ExtResource("14_8hp7i")]
+max_health = 30
+is_player_health = true
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("owning_character") instance=ExtResource("15_e8usa")]
+z_index = 1
+collision_layer = 2
+collision_mask = 2
+owning_character = NodePath("..")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, 7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_th7uu")
+debug_color = Color(0.8145456, 0.0017600453, 0.9595589, 0.41960785)
+
 [connection signal="shot_fired" from="StateMachine/Shoot" to="." method="shoot"]
 [connection signal="flamethrower_fired" from="StateMachine/Flame" to="." method="flamethrower"]
+[connection signal="on_hit" from="Hurtbox" to="Health" method="_on_hit"]
+
+[editable path="Hurtbox"]

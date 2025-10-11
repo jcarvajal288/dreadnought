@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b754rm01txrfg"]
+[gd_scene load_steps=38 format=3 uid="uid://b754rm01txrfg"]
 
 [ext_resource type="Texture2D" uid="uid://vhrhuafceojw" path="res://Entities/Characters/Enemies/SwarmAlien/_art/SwarmAlien_all.png" id="1_daqj7"]
 [ext_resource type="Script" uid="uid://cctcgf3w0n51a" path="res://Entities/Characters/Enemies/enemy.gd" id="1_l86pn"]
@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://dxjc5xbo6t1i1" path="res://Entities/Characters/Enemies/SwarmAlien/States/Move/Move.tscn" id="7_bjoc7"]
 [ext_resource type="PackedScene" uid="uid://d2v1g7yqk0taq" path="res://Entities/Characters/Components/Directors/ApproachAndAttack/ApproachAndAttack.tscn" id="8_38b73"]
 [ext_resource type="PackedScene" uid="uid://yhp4hwujowqf" path="res://Entities/Characters/Enemies/SwarmAlien/States/Death/death.tscn" id="8_enqol"]
+[ext_resource type="PackedScene" uid="uid://opqmr8v5p1ym" path="res://Entities/Characters/Enemies/SwarmAlien/States/Attack/Attack.tscn" id="9_3x8y5"]
 [ext_resource type="PackedScene" uid="uid://b2n5la4gr48d0" path="res://Entities/Characters/Components/Health/Health.tscn" id="9_unmgx"]
 [ext_resource type="PackedScene" uid="uid://df7nuoj03q0g6" path="res://Entities/Characters/Components/Hurtbox/Hurtbox.tscn" id="10_q2eax"]
+[ext_resource type="PackedScene" uid="uid://duuvlrw71sgtf" path="res://Entities/Characters/Components/Hitbox/Hitbox.tscn" id="12_ae0pr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjg7u"]
 radius = 4.1231055
@@ -29,6 +31,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_enqol"]
 resource_name = "attackDownLeft"
@@ -45,6 +59,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [102, 103, 104, 105, 106, 107]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.20367557, 0.40428066),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_q2eax"]
@@ -63,6 +89,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [96, 97, 98, 99, 100, 101]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.20367557, 0.40428066),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_3x8y5"]
 resource_name = "attackUpLeft"
@@ -80,6 +118,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [114, 115, 116, 117, 118, 119]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.20367557, 0.40428066),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_ae0pr"]
 resource_name = "attackUpRight"
@@ -96,6 +146,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [108, 109, 110, 111, 112, 113]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.20367557, 0.40428066),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_q14ig"]
@@ -387,6 +449,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_enqol"]
 radius = 4.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3x8y5"]
+radius = 7.0
+
 [node name="SwarmAlien" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_l86pn")
@@ -413,16 +478,21 @@ starting_state = NodePath("Spawn")
 [node name="Spawn" parent="StateMachine" node_paths=PackedStringArray("idle_state") instance=ExtResource("4_t4p1i")]
 idle_state = NodePath("../Idle")
 
-[node name="Idle" parent="StateMachine" node_paths=PackedStringArray("move_state") instance=ExtResource("5_l86pn")]
+[node name="Idle" parent="StateMachine" node_paths=PackedStringArray("move_state", "attack_state") instance=ExtResource("5_l86pn")]
 move_state = NodePath("../Move")
+attack_state = NodePath("../Attack")
 
-[node name="Move" parent="StateMachine" node_paths=PackedStringArray("idle_state") instance=ExtResource("7_bjoc7")]
+[node name="Move" parent="StateMachine" node_paths=PackedStringArray("idle_state", "attack_state") instance=ExtResource("7_bjoc7")]
 idle_state = NodePath("../Idle")
+attack_state = NodePath("../Attack")
 
 [node name="Death" parent="StateMachine" instance=ExtResource("8_enqol")]
 
+[node name="Attack" parent="StateMachine" node_paths=PackedStringArray("idle_state") instance=ExtResource("9_3x8y5")]
+idle_state = NodePath("../Idle")
+
 [node name="ApproachAndAttack" parent="." node_paths=PackedStringArray("subject") instance=ExtResource("8_38b73")]
-attack_range_pixels = 8
+attack_range_pixels = 16
 tile_distance_to_notice_player = 50
 subject = NodePath("..")
 
@@ -435,9 +505,20 @@ owning_character = NodePath("..")
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("CircleShape2D_enqol")
 
+[node name="Hitbox" parent="." node_paths=PackedStringArray("owning_character") instance=ExtResource("12_ae0pr")]
+collision_layer = 2
+collision_mask = 2
+damage = 1
+owning_character = NodePath("..")
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_3x8y5")
+disabled = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Spawn" method="_on_animation_finished"]
 [connection signal="on_death" from="Health" to="." method="_on_death"]
 [connection signal="on_death" from="Health" to="StateMachine/Death" method="_on_death"]
 [connection signal="on_hit" from="Hurtbox" to="Health" method="_on_hit"]
 
 [editable path="Hurtbox"]
+[editable path="Hitbox"]
