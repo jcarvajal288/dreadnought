@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://j0jt7alhetw"]
+[gd_scene load_steps=8 format=3 uid="uid://j0jt7alhetw"]
 
 [ext_resource type="PackedScene" uid="uid://ct3e47jw21px5" path="res://Entities/Characters/Dreadnought/dreadnought.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dnqaoriu730cf" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cwmbhr8cgn78e" path="res://Levels/SpaceDerelict/TestLevel.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://xnkckinywik3" path="res://Entities/Characters/Enemies/PileOfFlesh/PileOfFlesh.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b754rm01txrfg" path="res://Entities/Characters/Enemies/SwarmAlien/SwarmAlien.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b1ud6khbfia3i" path="res://UI/MainUI/MainUI.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://b621tce185acb" path="res://UI/HealthBar/HealthBar.tscn" id="7_5vw27"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_lquwl")
@@ -30,6 +32,10 @@ position = Vector2(35.6, 240.275)
 
 [node name="SwarmAlien" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(179, 114)
+
+[node name="MainUi" parent="." instance=ExtResource("6_272bh")]
+
+[node name="HealthBar" parent="MainUi" instance=ExtResource("7_5vw27")]
 
 [editable path="Dreadnought"]
 [editable path="Dreadnought/Hurtbox"]

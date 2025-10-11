@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b621tce185acb"]
+
+[ext_resource type="Script" uid="uid://pkpvpy0oirgf" path="res://UI/HealthBar/health_bar.gd" id="1_8uija"]
+[ext_resource type="Texture2D" uid="uid://0i605ovnib2n" path="res://UI/HealthBar/_art/large_horizontal_bar_under.png" id="1_yidsy"]
+[ext_resource type="Texture2D" uid="uid://d0trfa7axc63w" path="res://UI/HealthBar/_art/large_horizontal_bar_over.png" id="2_8uija"]
+[ext_resource type="Texture2D" uid="uid://cobp7ecy3oanq" path="res://UI/HealthBar/_art/red_bar.png" id="2_swh8h"]
+
+[node name="HealthBar" type="Node2D"]
+script = ExtResource("1_8uija")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 12.0
+value = 100.0
+stretch_margin_left = 5
+stretch_margin_top = 5
+stretch_margin_right = 5
+stretch_margin_bottom = 5
+texture_under = ExtResource("1_yidsy")
+texture_over = ExtResource("2_8uija")
+texture_progress = ExtResource("2_swh8h")
+texture_progress_offset = Vector2(4, 3)
