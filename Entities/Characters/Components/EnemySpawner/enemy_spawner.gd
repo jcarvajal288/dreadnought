@@ -51,8 +51,18 @@ func choose_spawn_position() -> Vector2:
 
 
 func is_point_free(point: Vector2, space_state: PhysicsDirectSpaceState2D) -> bool:
-	var query = PhysicsPointQueryParameters2D.new()
-	query.position = point
-	query.collide_with_bodies = true
-	query.collision_mask = Global.CollisionLayer.WALLS
-	return space_state.intersect_point(query).is_empty()
+	var is_not_colliding = func() -> bool:
+		var query = PhysicsPointQueryParameters2D.new()
+		query.position = point
+		query.collide_with_bodies = true
+		query.collision_mask = Global.CollisionLayer.WALLS
+		return space_state.intersect_point(query).is_empty()
+
+	var is_on_map = func() -> bool:
+		var query = PhysicsPointQueryParameters2D.new()
+		query.position = point
+		query.collide_with_bodies = true
+		query.collision_mask = 128
+		return not space_state.intersect_point(query).is_empty()
+
+	return is_not_colliding.call() and is_on_map.call()

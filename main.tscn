@@ -15,9 +15,27 @@ position = Vector2(191.44, 133.65)
 
 [node name="TestLevel" parent="." instance=ExtResource("2_0xm2m")]
 
-[node name="PileOfFlesh" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(272, 74)
+[node name="PileOfFlesh_NE" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(338.305, 48.92)
 
-[editable path="PileOfFlesh"]
-[editable path="PileOfFlesh/Hurtbox"]
-[editable path="PileOfFlesh/EnemySpawner"]
+[node name="PileOfFlesh_SE" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(338.305, 240.83)
+
+[node name="PileOfFlesh_NW" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(35.6, 48.92)
+
+[node name="PileOfFlesh_SW" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(35.6, 240.275)
+
+[editable path="PileOfFlesh_NE"]
+[editable path="PileOfFlesh_NE/Hurtbox"]
+[editable path="PileOfFlesh_NE/EnemySpawner"]
+[editable path="PileOfFlesh_SE"]
+[editable path="PileOfFlesh_SE/Hurtbox"]
+[editable path="PileOfFlesh_SE/EnemySpawner"]
+[editable path="PileOfFlesh_NW"]
+[editable path="PileOfFlesh_NW/Hurtbox"]
+[editable path="PileOfFlesh_NW/EnemySpawner"]
+[editable path="PileOfFlesh_SW"]
+[editable path="PileOfFlesh_SW/Hurtbox"]
+[editable path="PileOfFlesh_SW/EnemySpawner"]

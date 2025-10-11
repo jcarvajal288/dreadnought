@@ -18,5 +18,7 @@ enum CollisionLayer {
 	WALLS = 1,
 	PLAYER = 2,
 	ENEMY = 3,
+	BULLET = 4,
+	FLOOR = 8,
 }
 
