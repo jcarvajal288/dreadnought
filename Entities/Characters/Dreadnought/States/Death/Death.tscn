@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://baob1l78apuck"]
+
+[ext_resource type="Script" uid="uid://c68knu8rh2w11" path="res://Entities/Characters/Dreadnought/States/Death/death.gd" id="1_56yeu"]
+
+[node name="Death" type="Node"]
+script = ExtResource("1_56yeu")
+animation_name = "death"
+metadata/_custom_type_script = "uid://wqm3fo1ec63x"
