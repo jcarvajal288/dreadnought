@@ -28,3 +28,7 @@ func flamethrower(direction: Vector2) -> void:
 	add_child(flame_effect)
 	flame_effect.set_owning_character(self)
 	flame_effect.start(direction)
+
+
+func hide_leg_sprite() -> void:
+	$LegSprite.visible = false

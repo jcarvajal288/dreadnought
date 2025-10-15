@@ -1,5 +1,6 @@
 class_name InputDirector extends Director
 
+var movement_locked = false
 var shooting_vector = Vector2.ZERO
 var flamethrower_toggled = false
 
@@ -19,6 +20,8 @@ func _physics_process(_delta: float) -> void:
 
 func run_legs():
 	subject.leg_animation_player.set_facing(movement_vector)
+	if movement_locked:
+		return
 	if movement_vector == Vector2.ZERO:
 		subject.leg_animation_player.play_with_facing("idle")
 		if $LegStompSFXPlayer.playing:
@@ -27,5 +30,5 @@ func run_legs():
 		subject.leg_animation_player.play_with_facing("move")
 		if not $LegStompSFXPlayer.playing:
 			$LegStompSFXPlayer.play()
-	subject.velocity = movement_vector * subject.speed
-	subject.move_and_slide()
+		subject.velocity = movement_vector * subject.speed
+		subject.move_and_slide()
