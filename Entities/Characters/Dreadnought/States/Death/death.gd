@@ -7,5 +7,4 @@ func enter() -> void:
 
 
 func _on_death() -> void:
-	print("trigger")
 	signal_state_change.emit(self)

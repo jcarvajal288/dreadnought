@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ost2x4qhocw4"]
 
-[ext_resource type="Texture2D" uid="uid://ba2gpvgqcp2hp" path="res://Levels/SpaceDerelict/art/DerelictTileset.png" id="1_cl03b"]
+[ext_resource type="Texture2D" uid="uid://ba2gpvgqcp2hp" path="res://Levels/SpaceDerelict/_art/DerelictTileset.png" id="1_g6ex4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2yd87"]
-texture = ExtResource("1_cl03b")
+texture = ExtResource("1_g6ex4")
 texture_region_size = Vector2i(8, 8)
 1:1/0 = 0
 6:1/0 = 0

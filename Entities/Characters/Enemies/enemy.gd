@@ -4,6 +4,7 @@ func _init() -> void:
 	speed = 25
 
 func _ready() -> void:
+	z_index = Global.RenderOrder.ENEMY
 	$StateMachine.init(self)
 
 

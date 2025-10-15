@@ -8,8 +8,10 @@ signal player_health_changed
 enum RenderOrder {
 	BASE = -2,
 	FLOOR = 0,
-	WALL = 1,
-	PROP = 2,
+	DOOR = 1,
+	WALL = 2,
+	PROP = 3,
+	ENEMY = 4,
 	PLAYER = 5,
 	UI = 100,
 }

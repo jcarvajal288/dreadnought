@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba2gpvgqcp2hp"
-path="res://.godot/imported/DerelictTileset.png-81ac3217f4a590f1ecc68cfe3b040845.ctex"
+path="res://.godot/imported/DerelictTileset.png-af59e845d089054d55ec02f295357096.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/SpaceDerelict/art/DerelictTileset.png"
-dest_files=["res://.godot/imported/DerelictTileset.png-81ac3217f4a590f1ecc68cfe3b040845.ctex"]
+source_file="res://Levels/SpaceDerelict/_art/DerelictTileset.png"
+dest_files=["res://.godot/imported/DerelictTileset.png-af59e845d089054d55ec02f295357096.ctex"]
 
 [params]
 
