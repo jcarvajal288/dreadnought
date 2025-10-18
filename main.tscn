@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://j0jt7alhetw"]
+[gd_scene load_steps=9 format=3 uid="uid://j0jt7alhetw"]
 
 [ext_resource type="PackedScene" uid="uid://ct3e47jw21px5" path="res://Entities/Characters/Dreadnought/dreadnought.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dnqaoriu730cf" path="res://main.gd" id="1_lquwl"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b754rm01txrfg" path="res://Entities/Characters/Enemies/SwarmAlien/SwarmAlien.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b1ud6khbfia3i" path="res://UI/MainUI/MainUI.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://b621tce185acb" path="res://UI/HealthBar/HealthBar.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://tmnhciwd1nef" path="res://UI/SpawnerCounter/SpawnerCounter.tscn" id="8_5vw27"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_lquwl")
@@ -36,6 +37,12 @@ position = Vector2(179, 114)
 [node name="MainUi" parent="." instance=ExtResource("6_272bh")]
 
 [node name="HealthBar" parent="MainUi" instance=ExtResource("7_5vw27")]
+
+[node name="SpawnerCounter" parent="MainUi" instance=ExtResource("8_5vw27")]
+offset_left = 59.855
+offset_top = 8.7
+offset_right = 59.85437
+offset_bottom = 8.699997
 
 [editable path="Dreadnought"]
 [editable path="Dreadnought/Hurtbox"]

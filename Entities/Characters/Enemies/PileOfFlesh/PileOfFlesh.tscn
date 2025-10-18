@@ -278,6 +278,7 @@ ExtResource("11_3fxoi"): 1
 })
 spawn_frequency = 1.0
 
+[connection signal="on_death" from="Health" to="." method="_on_death"]
 [connection signal="on_death" from="Health" to="EnemySpawner" method="despawn"]
 [connection signal="on_hit" from="Hurtbox" to="StateMachine/Damaged" method="_on_hit"]
 [connection signal="on_hit" from="Hurtbox" to="Health" method="_on_hit"]

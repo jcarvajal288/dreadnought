@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://tmnhciwd1nef"]
+
+[ext_resource type="Script" uid="uid://c78tv4u55t73p" path="res://UI/SpawnerCounter/spawner_counter.gd" id="1_ekn0g"]
+[ext_resource type="Texture2D" uid="uid://1dcvjx3lnfkf" path="res://Entities/Characters/Enemies/PileOfFlesh/_art/PileOfFlesh_most.png" id="1_fhyi8"]
+
+[node name="SpawnerCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekn0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fhyi8")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.71
+offset_top = -8.125
+offset_right = 48.71
+offset_bottom = 14.875
+scale = Vector2(0.5, 0.5)
+text = "0"

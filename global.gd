@@ -2,6 +2,7 @@ extends Node
 
 var PLAYER_POSITION = Vector2.ZERO
 var MAP_TILE_SIZE = 8.0
+var NUM_SPAWNERS = 0
 
 signal player_health_changed
 
