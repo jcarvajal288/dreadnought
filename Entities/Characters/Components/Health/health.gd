@@ -23,6 +23,15 @@ func _on_hit(hitbox: Area2D):
 	if hitbox is Hitbox:
 		take_damage(hitbox.damage)
 
+
+func heal(amount: int) -> void:
+	var new_health = current_health + amount
+	if new_health > max_health:
+		current_health = max_health
+	else:
+		current_health = new_health
+	Global.player_health_changed.emit(current_health, max_health)
+
 	
 func take_damage(damage: int):
 	if current_health <= 0:

@@ -8,6 +8,7 @@ class_name Dreadnought extends Character
 	Global.KeyItem.RED : false
 }
 
+
 func _ready() -> void:
 	speed = 25
 	$StateMachine.init(self)
@@ -35,3 +36,7 @@ func flamethrower(direction: Vector2) -> void:
 
 func hide_leg_sprite() -> void:
 	$LegSprite.visible = false
+
+
+func repair(amount: int) -> void:
+	$Health.heal(amount)
