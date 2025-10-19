@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://beajxyrg56bux" path="res://Entities/Items/Keycard/keycard.gd" id="1_g4fjk"]
 [ext_resource type="Texture2D" uid="uid://ddj7mjugcoq80" path="res://Entities/Items/Keycard/_art/red_keycard.png" id="2_va68d"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dgm61"]
+[ext_resource type="PackedScene" uid="uid://bfiiis07cfwg3" path="res://Entities/Items/PickupItem/PickupArea.tscn" id="3_va68d"]
 
 [node name="RedKeycard" type="Node2D"]
 script = ExtResource("1_g4fjk")
@@ -12,10 +11,4 @@ color = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_va68d")
 
-[node name="PickupArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-shape = SubResource("CircleShape2D_dgm61")
-debug_color = Color(0.8745098, 0, 0.8745098, 0.41960785)
+[node name="PickupArea" parent="." instance=ExtResource("3_va68d")]
