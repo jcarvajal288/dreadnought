@@ -4,6 +4,9 @@ class_name Dreadnought extends Character
 @export var flame_effect_scene: PackedScene
 
 @onready var leg_animation_player = $LegAnimationPlayer
+@onready var inventory = {
+	Global.KeyItem.RED : false
+}
 
 func _ready() -> void:
 	speed = 25

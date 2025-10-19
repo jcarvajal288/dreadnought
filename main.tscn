@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://j0jt7alhetw"]
+[gd_scene load_steps=7 format=3 uid="uid://j0jt7alhetw"]
 
 [ext_resource type="PackedScene" uid="uid://ct3e47jw21px5" path="res://Entities/Characters/Dreadnought/dreadnought.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dnqaoriu730cf" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cwmbhr8cgn78e" path="res://Levels/SpaceDerelict/TestLevel.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://xnkckinywik3" path="res://Entities/Characters/Enemies/PileOfFlesh/PileOfFlesh.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://b754rm01txrfg" path="res://Entities/Characters/Enemies/SwarmAlien/SwarmAlien.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b1ud6khbfia3i" path="res://UI/MainUI/MainUI.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://b621tce185acb" path="res://UI/HealthBar/HealthBar.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://tmnhciwd1nef" path="res://UI/SpawnerCounter/SpawnerCounter.tscn" id="8_5vw27"]
@@ -19,21 +17,6 @@ position = Vector2(191.44, 133.65)
 
 [node name="TestLevel" parent="." instance=ExtResource("2_0xm2m")]
 
-[node name="PileOfFlesh_NE" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(338.305, 48.92)
-
-[node name="PileOfFlesh_SE" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(338.305, 240.83)
-
-[node name="PileOfFlesh_NW" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(35.6, 48.92)
-
-[node name="PileOfFlesh_SW" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(35.6, 240.275)
-
-[node name="SwarmAlien" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(179, 114)
-
 [node name="MainUi" parent="." instance=ExtResource("6_272bh")]
 
 [node name="HealthBar" parent="MainUi" instance=ExtResource("7_5vw27")]
@@ -46,15 +29,3 @@ offset_bottom = 8.699997
 
 [editable path="Dreadnought"]
 [editable path="Dreadnought/Hurtbox"]
-[editable path="PileOfFlesh_NE"]
-[editable path="PileOfFlesh_NE/Hurtbox"]
-[editable path="PileOfFlesh_NE/EnemySpawner"]
-[editable path="PileOfFlesh_SE"]
-[editable path="PileOfFlesh_SE/Hurtbox"]
-[editable path="PileOfFlesh_SE/EnemySpawner"]
-[editable path="PileOfFlesh_NW"]
-[editable path="PileOfFlesh_NW/Hurtbox"]
-[editable path="PileOfFlesh_NW/EnemySpawner"]
-[editable path="PileOfFlesh_SW"]
-[editable path="PileOfFlesh_SW/Hurtbox"]
-[editable path="PileOfFlesh_SW/EnemySpawner"]

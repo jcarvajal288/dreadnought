@@ -1,13 +1,18 @@
 extends StaticBody2D
 
 
+@export var required_key: Global.KeyItem
+
+@onready var is_open = false
+
+
 func _ready() -> void:
 	$OpenSensor.body_entered.connect(_on_body_entered)
 	$OpenSensor.body_exited.connect(_on_body_exited)
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Dreadnought:
+	if body is Dreadnought and has_required_key(body):
 		open_door()
 
 
@@ -17,8 +22,19 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func open_door() -> void:
-	$AnimationPlayer.play('open')
+	if not is_open:
+		is_open = true
+		$AnimationPlayer.play('open')
 
 
 func close_door() -> void:
-	$AnimationPlayer.play('close')
+	if is_open:
+		is_open = false
+		$AnimationPlayer.play('close')
+
+
+func has_required_key(body: Dreadnought) -> bool:
+	if required_key == Global.KeyItem.NONE:
+		return true
+	else:
+		return body.inventory[required_key]

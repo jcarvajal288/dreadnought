@@ -25,3 +25,8 @@ enum CollisionLayer {
 	FLOOR = 8,
 }
 
+
+enum KeyItem {
+	NONE,
+	RED
+}

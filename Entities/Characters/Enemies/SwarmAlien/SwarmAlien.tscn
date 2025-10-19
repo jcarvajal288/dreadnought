@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://b754rm01txrfg"]
 
+[ext_resource type="Script" uid="uid://i5ink40okeaj" path="res://Entities/Characters/Enemies/SwarmAlien/swarm_alien.gd" id="1_3x8y5"]
 [ext_resource type="Texture2D" uid="uid://vhrhuafceojw" path="res://Entities/Characters/Enemies/SwarmAlien/_art/SwarmAlien_all.png" id="1_daqj7"]
-[ext_resource type="Script" uid="uid://cctcgf3w0n51a" path="res://Entities/Characters/Enemies/enemy.gd" id="1_l86pn"]
 [ext_resource type="Script" uid="uid://blockl131hlo6" path="res://Entities/Characters/animation_player.gd" id="2_qer54"]
 [ext_resource type="PackedScene" uid="uid://gec6jw3pw8ie" path="res://Entities/Characters/Components/StateMachine/StateMachine.tscn" id="3_3vsi2"]
 [ext_resource type="PackedScene" uid="uid://4xtj3t8rjvjp" path="res://Entities/Characters/Enemies/SwarmAlien/States/Spawn/spawn.tscn" id="4_t4p1i"]
@@ -454,7 +454,7 @@ radius = 7.0
 
 [node name="SwarmAlien" type="CharacterBody2D"]
 collision_layer = 4
-script = ExtResource("1_l86pn")
+script = ExtResource("1_3x8y5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sjg7u")
