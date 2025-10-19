@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwuqi0msmt7ot"]
+
+[ext_resource type="Script" uid="uid://beajxyrg56bux" path="res://Entities/Items/RedKeycard/key.gd" id="1_dgm61"]
+[ext_resource type="Texture2D" uid="uid://ddj7mjugcoq80" path="res://Entities/Items/RedKeycard/_art/red_keycard.png" id="1_o8jq5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dgm61"]
+
+[node name="RedKeycard" type="Node2D"]
+script = ExtResource("1_dgm61")
+color = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o8jq5")
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_dgm61")
+debug_color = Color(0.8745098, 0, 0.8745098, 0.41960785)
