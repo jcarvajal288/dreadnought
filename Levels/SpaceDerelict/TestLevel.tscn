@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://ost2x4qhocw4" path="res://Levels/SpaceDerelict/_art/space_derelict.tres" id="1_6a4l8"]
 [ext_resource type="PackedScene" uid="uid://bgd3rvakfjqvg" path="res://Levels/SpaceDerelict/RedDoor.tscn" id="2_dk2ur"]
 [ext_resource type="PackedScene" uid="uid://xnkckinywik3" path="res://Entities/Characters/Enemies/PileOfFlesh/PileOfFlesh.tscn" id="3_o6nrt"]
-[ext_resource type="PackedScene" uid="uid://dwuqi0msmt7ot" path="res://Entities/Items/RedKeycard/RedKeycard.tscn" id="4_0f6vb"]
+[ext_resource type="PackedScene" uid="uid://dwuqi0msmt7ot" path="res://Entities/Items/Keycard/Keycard.tscn" id="4_0f6vb"]
 
 [node name="TestLevel" type="Node2D"]
 

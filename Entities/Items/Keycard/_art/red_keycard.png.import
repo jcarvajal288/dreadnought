@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddj7mjugcoq80"
-path="res://.godot/imported/red_keycard.png-b28f35d9bfca221b1e2003acf7178f89.ctex"
+path="res://.godot/imported/red_keycard.png-57fc522c450f6b2c5af6fbd9feeb04ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Items/RedKeycard/_art/red_keycard.png"
-dest_files=["res://.godot/imported/red_keycard.png-b28f35d9bfca221b1e2003acf7178f89.ctex"]
+source_file="res://Entities/Items/Keycard/_art/red_keycard.png"
+dest_files=["res://.godot/imported/red_keycard.png-57fc522c450f6b2c5af6fbd9feeb04ca.ctex"]
 
 [params]
 
