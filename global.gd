@@ -4,9 +4,10 @@ var PLAYER_POSITION = Vector2.ZERO
 var MAP_TILE_SIZE = 8.0
 var NUM_SPAWNERS = 0
 
-var is_game_over = false
+@onready var is_game_over = false
 
 signal player_health_changed
+signal add_enemy
 signal game_over
 
 enum RenderOrder {

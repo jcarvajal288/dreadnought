@@ -23,7 +23,7 @@ func spawn_enemy() -> void:
 	if spawn_position != Vector2.ZERO:
 		var enemy = enemy_scene.instantiate()
 		enemy.global_position = spawn_position
-		get_tree().root.add_child(enemy)
+		Global.add_enemy.emit(enemy)
 
 
 func choose_enemy() -> PackedScene:
