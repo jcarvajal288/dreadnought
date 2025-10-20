@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgl5v820pdk8o"
-path="res://.godot/imported/Quest_Abandoned.wav-c11de07c1323528a8e80bff51a8ae6a0.sample"
+path="res://.godot/imported/Quest_Abandoned.wav-f0ca4f9efe5f635abfc7a7dd305539b8.sample"
 
 [deps]
 
-source_file="res://UI/GameOverScreen/sfx/Quest_Abandoned.wav"
-dest_files=["res://.godot/imported/Quest_Abandoned.wav-c11de07c1323528a8e80bff51a8ae6a0.sample"]
+source_file="res://UI/EndScreen/sfx/Quest_Abandoned.wav"
+dest_files=["res://.godot/imported/Quest_Abandoned.wav-f0ca4f9efe5f635abfc7a7dd305539b8.sample"]
 
 [params]
 

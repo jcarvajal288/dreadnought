@@ -1,7 +1,6 @@
 extends Node
 
-@export var victory_screen_scene: PackedScene
-@export var game_over_screen_scene: PackedScene
+@export var end_screen_scene: PackedScene
 
 
 func _ready() -> void:
@@ -10,19 +9,21 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Global.NUM_SPAWNERS <= 4:
+	if Global.NUM_SPAWNERS <= 4 and not Global.is_game_over:
 		declare_victory()
 
 
 func declare_victory() -> void:
 	Global.is_game_over = true
-	var victory_screen = victory_screen_scene.instantiate()
+	var victory_screen = end_screen_scene.instantiate()
+	victory_screen.set_text("Victory!")
 	add_child(victory_screen)
 
 
 func _on_game_over() -> void:
 	Global.is_game_over = true
-	var game_over_screen = game_over_screen_scene.instantiate()
+	var game_over_screen = end_screen_scene.instantiate()
+	game_over_screen.set_text("Game Over")
 	add_child(game_over_screen)
 
 

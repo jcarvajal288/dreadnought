@@ -1,18 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://j0jt7alhetw"]
+[gd_scene load_steps=8 format=3 uid="uid://j0jt7alhetw"]
 
 [ext_resource type="PackedScene" uid="uid://ct3e47jw21px5" path="res://Entities/Characters/Dreadnought/dreadnought.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dnqaoriu730cf" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cwmbhr8cgn78e" path="res://Levels/SpaceDerelict/TestLevel.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://baywr6e00k6kp" path="res://UI/VictoryScreen/VictoryScreen.tscn" id="2_5vw27"]
-[ext_resource type="PackedScene" uid="uid://d243780ngc04u" path="res://UI/GameOverScreen/game_over_screen.tscn" id="2_272bh"]
+[ext_resource type="PackedScene" uid="uid://d243780ngc04u" path="res://UI/EndScreen/end_screen.tscn" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://b1ud6khbfia3i" path="res://UI/MainUI/MainUI.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://b621tce185acb" path="res://UI/HealthBar/HealthBar.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://tmnhciwd1nef" path="res://UI/SpawnerCounter/SpawnerCounter.tscn" id="8_5vw27"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_lquwl")
-victory_screen_scene = ExtResource("2_5vw27")
-game_over_screen_scene = ExtResource("2_272bh")
+end_screen_scene = ExtResource("2_272bh")
 
 [node name="Dreadnought" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(191.44, 133.65)

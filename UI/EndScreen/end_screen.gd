@@ -12,3 +12,7 @@ func _process(_delta: float) -> void:
 
 func set_score(final_score: int) -> void:
 	$CanvasLayer/ScoreLabel.text = "Final Score: %d" % final_score
+
+
+func set_text(end_text: String) -> void:
+	$CanvasLayer/GameOverLabel.text = end_text
