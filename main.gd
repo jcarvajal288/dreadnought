@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Global.NUM_SPAWNERS <= 4 and not Global.is_game_over:
+	if Global.NUM_SPAWNERS <= 0 and not Global.is_game_over:
 		declare_victory()
 
 

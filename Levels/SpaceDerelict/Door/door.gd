@@ -9,7 +9,7 @@ extends StaticBody2D
 func _ready() -> void:
 	$OpenSensor.body_entered.connect(_on_body_entered)
 	$OpenSensor.body_exited.connect(_on_body_exited)
-	$AnimationPlayer.play_backwards('open' + color())
+	$AnimationPlayer.play_backwards(color() + "Open")
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -25,13 +25,13 @@ func _on_body_exited(body: Node2D) -> void:
 func open_door() -> void:
 	if not is_open:
 		is_open = true
-		$AnimationPlayer.play('open' + color())
+		$AnimationPlayer.play(color() + "Open")
 
 
 func close_door() -> void:
 	if is_open:
 		is_open = false
-		$AnimationPlayer.play_backwards('open' + color())
+		$AnimationPlayer.play_backwards(color() + "Open")
 
 
 func has_required_key(body: Dreadnought) -> bool:

@@ -1,23 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://j0jt7alhetw"]
+[gd_scene load_steps=9 format=3 uid="uid://j0jt7alhetw"]
 
 [ext_resource type="PackedScene" uid="uid://ct3e47jw21px5" path="res://Entities/Characters/Dreadnought/dreadnought.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dnqaoriu730cf" path="res://main.gd" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://cwmbhr8cgn78e" path="res://Levels/SpaceDerelict/TestLevel.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d243780ngc04u" path="res://UI/EndScreen/end_screen.tscn" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://b1ud6khbfia3i" path="res://UI/MainUI/MainUI.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://b621tce185acb" path="res://UI/HealthBar/HealthBar.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cdes68fqfl5pm" path="res://Levels/SpaceDerelict/Level1.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://tmnhciwd1nef" path="res://UI/SpawnerCounter/SpawnerCounter.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://xnkckinywik3" path="res://Entities/Characters/Enemies/PileOfFlesh/PileOfFlesh.tscn" id="8_kek77"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_lquwl")
 end_screen_scene = ExtResource("2_272bh")
 
 [node name="Dreadnought" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(191.44, 133.65)
+position = Vector2(456.62, 312.425)
 
 [node name="Camera2D" type="Camera2D" parent="Dreadnought"]
-
-[node name="TestLevel" parent="." instance=ExtResource("2_0xm2m")]
 
 [node name="MainUi" parent="." instance=ExtResource("6_272bh")]
 
@@ -28,6 +27,11 @@ offset_left = 59.855
 offset_top = 8.7
 offset_right = 59.85437
 offset_bottom = 8.699997
+
+[node name="Level1" parent="." instance=ExtResource("7_272bh")]
+
+[node name="PileOfFlesh" parent="." instance=ExtResource("8_kek77")]
+position = Vector2(199, -143)
 
 [editable path="Dreadnought"]
 [editable path="Dreadnought/Hurtbox"]
