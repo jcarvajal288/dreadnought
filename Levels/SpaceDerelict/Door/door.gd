@@ -9,6 +9,7 @@ extends StaticBody2D
 func _ready() -> void:
 	$OpenSensor.body_entered.connect(_on_body_entered)
 	$OpenSensor.body_exited.connect(_on_body_exited)
+	$AnimationPlayer.play_backwards('open' + color())
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -24,13 +25,13 @@ func _on_body_exited(body: Node2D) -> void:
 func open_door() -> void:
 	if not is_open:
 		is_open = true
-		$AnimationPlayer.play('open')
+		$AnimationPlayer.play('open' + color())
 
 
 func close_door() -> void:
 	if is_open:
 		is_open = false
-		$AnimationPlayer.play('close')
+		$AnimationPlayer.play_backwards('open' + color())
 
 
 func has_required_key(body: Dreadnought) -> bool:
@@ -38,3 +39,14 @@ func has_required_key(body: Dreadnought) -> bool:
 		return true
 	else:
 		return body.inventory[required_key]
+
+
+func color() -> String:
+	if required_key == Global.KeyItem.RED:
+		return "red"
+	elif required_key == Global.KeyItem.YELLOW:
+		return "yellow"
+	elif required_key == Global.KeyItem.BLUE:
+		return "blue"
+	else:
+		return "basic"

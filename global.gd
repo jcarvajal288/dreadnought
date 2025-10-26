@@ -32,5 +32,7 @@ enum CollisionLayer {
 
 enum KeyItem {
 	NONE,
-	RED
+	RED,
+	YELLOW,
+	BLUE,
 }
