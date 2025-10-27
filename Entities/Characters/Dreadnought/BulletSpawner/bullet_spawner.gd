@@ -5,11 +5,13 @@ extends RigidBody2D
 var direction: Vector2
 var speed = 400
 var impact_interval = 0.03
+var startup_time = 0.125
 
 
 func _ready() -> void:
-	$Timer.start(impact_interval)
-	$Timer.timeout.connect(spawn_bullet_impact)
+	$StartupTimer.start(startup_time)
+	$ImpactIntervalTimer.start(impact_interval)
+	$ImpactIntervalTimer.timeout.connect(spawn_bullet_impact)
 	body_entered.connect(on_body_entered)
 
 
@@ -18,6 +20,8 @@ func set_velocity():
 
 
 func spawn_bullet_impact() -> void:
+	if $StartupTimer.time_left > 0:
+		return
 	var impact = bullet_impact_scene.instantiate()
 	impact.set_facing(direction)
 	impact.global_position = global_position 
@@ -25,5 +29,4 @@ func spawn_bullet_impact() -> void:
 
 
 func on_body_entered(_body: Node2D) -> void:
-	spawn_bullet_impact()
 	queue_free()

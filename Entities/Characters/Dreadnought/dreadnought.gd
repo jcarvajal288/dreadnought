@@ -20,7 +20,7 @@ func _physics_process(_delta):
 
 func shoot(direction: Vector2) -> void:
 	var bullet_spawner = bullet_spawner_scene.instantiate()
-	var distance = 32.0
+	var distance = 0.0
 	bullet_spawner.global_position = global_position + direction * distance 
 	bullet_spawner.direction = direction
 	get_tree().root.add_child(bullet_spawner)
