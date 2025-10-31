@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dydj14ckh5pyx"
-path="res://.godot/imported/05_Zombie_death.wav-9b203e8ca4be6fadb4665fdfca865014.sample"
+path="res://.godot/imported/05_Zombie_death.wav-a0a1a075b7356d31c4605abef2b5e92d.sample"
 
 [deps]
 
-source_file="res://Entities/Characters/Enemies/SwarmAlien/_sfx/05_Zombie_death.wav"
-dest_files=["res://.godot/imported/05_Zombie_death.wav-9b203e8ca4be6fadb4665fdfca865014.sample"]
+source_file="res://UI/SoundManager/sfx/05_Zombie_death.wav"
+dest_files=["res://.godot/imported/05_Zombie_death.wav-a0a1a075b7356d31c4605abef2b5e92d.sample"]
 
 [params]
 

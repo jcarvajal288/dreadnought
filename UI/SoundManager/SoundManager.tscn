@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://jq2n5sgdv7x2"]
+
+[ext_resource type="Script" uid="uid://bo1bc4n5oeu3k" path="res://UI/SoundManager/sound_manager.gd" id="1_1e7b7"]
+[ext_resource type="AudioStream" uid="uid://dydj14ckh5pyx" path="res://UI/SoundManager/sfx/05_Zombie_death.wav" id="2_gkkul"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_1e7b7")
+
+[node name="SwarmAlienDeathPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_gkkul")
+max_polyphony = 5

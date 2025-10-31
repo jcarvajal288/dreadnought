@@ -8,7 +8,7 @@ func _on_death() -> void:
 func enter() -> void:
 	super()
 	subject.velocity = Vector2.ZERO
-	$DeathSFX.play()
+	Global.play_sound.emit(Global.SoundEffect.SWARM_ALIEN_DEATH, subject.global_position)
 
 
 func _on_animation_finished(anim_name: String) -> void:

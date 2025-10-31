@@ -9,6 +9,7 @@ var NUM_SPAWNERS = 0
 signal player_health_changed
 signal add_enemy
 signal game_over
+signal play_sound
 
 enum RenderOrder {
 	BASE = -2,
@@ -35,4 +36,8 @@ enum KeyItem {
 	RED,
 	YELLOW,
 	BLUE,
+}
+
+enum SoundEffect {
+	SWARM_ALIEN_DEATH
 }
